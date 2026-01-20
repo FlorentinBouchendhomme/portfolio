@@ -1,75 +1,57 @@
-# Nuxt Minimal Starter
+# Portfolio
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal portfolio website built with **Nuxt 4 (SSG)**, **Tailwind CSS**, and **GSAP**.  
+Deployed on **Cloudflare Pages**.
 
-## Setup
+## Tech Stack
 
-Make sure to install dependencies:
+- Nuxt 4
+- Vue 3
+- Tailwind CSS
+- GSAP
+
+## Requirements
+
+- Node.js >= 20
+- npm >= 9
+
+## Getting Started
+
+Install dependencies:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Run locally:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Open: http://localhost:3000
 
-Build the application for production:
+## Build (Production)
+
+Build the project:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+> Nuxt is configured for the `cloudflare-pages` Nitro preset, so the build output is generated in `dist/`.
 
-```bash
-# npm
-npm run preview
+## Deployment
 
-# pnpm
-pnpm preview
+This project is deployed via **Cloudflare Pages**:
 
-# yarn
-yarn preview
+- Production branch: `main`
+- Build command: `npm run build`
+- Output directory: `dist`
 
-# bun
-bun run preview
-```
+Every push to `main` triggers a production deployment.
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Scripts
+
+- `npm run dev` — start dev server
+- `npm run build` — build for production (Cloudflare Pages output: `dist`)
