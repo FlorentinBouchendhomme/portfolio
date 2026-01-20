@@ -1,0 +1,16 @@
+{
+  "const": {
+    "job": "Fullstack developper (PHP + JavaScript)",
+    "jobDescription":"blabla",
+    "offers": "Offres",
+    "testimonies": "Témoignages",
+    "contact": "Contact",
+    "cta": "Book a call"
+  },
+  "footer": {
+    "description": "blabla",
+    "availability": "Availability: evenings + weekend (remote-friendly)",
+    "email": "Email me",
+    "rights": "All rights reserved."
+  }
+}
