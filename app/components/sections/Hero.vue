@@ -80,14 +80,6 @@
             >
               {{ $t("hero.primaryCta") }}
             </a>
-
-            <!-- Secondary button: View offers -->
-            <a
-              href="#offers"
-              class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-            >
-              {{ $t("hero.secondaryCta") }}
-            </a>
           </div>
 
           <!-- Availability status -->
@@ -140,11 +132,11 @@
 
             <!-- Card CTA button -->
             <a
-              href="#contact"
-              class="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+              href="#offers"
+              class="mt-6 inline-flex w-full items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
             >
-              {{ $t("const.cta") }}
-              <span class="ml-2 text-emerald-300" aria-hidden="true">&gt;</span>
+              {{ $t("hero.secondaryCta") }}
+              <span class="ml-2 text-emerald-600" aria-hidden="true">&gt;</span>
             </a>
 
             <!-- Disclaimer footer -->
@@ -173,20 +165,7 @@ type RightItem = { title: any; value: any; explanation?: any };
 
 // i18n utility functions
 const { tm, rt } = useI18n();
-
-/**
- * Converts message nodes to readable strings
- * Falls back to various node properties if primary method fails
- */
-function toText(v: any): string {
-  // rt() converts message nodes to string
-  try {
-    return typeof v === "string" ? v : rt(v);
-  } catch {
-    // fallback if rt isn't available for some reason
-    return v?.body?.static ?? v?.loc?.source ?? String(v ?? "");
-  }
-}
+const { toText } = useI18nText();
 
 /**
  * Computed property: transforms raw bullet data
