@@ -49,44 +49,53 @@
 
           <!-- CTA -->
           <div class="flex flex-col gap-2 sm:items-end">
-            <a
-              :href="`mailto:${email}?subject=${encodeURIComponent(
-                subject
-              )}&body=${encodeURIComponent(body)}`"
-              class="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-            >
-              {{ $t("footer.email") }}
-              <span class="text-emerald-300">-></span>
-            </a>
+            <div class="flex gap-2">
+              <a
+                :href="`mailto:${email}?subject=${encodeURIComponent(
+                  $t('mail.subject')
+                )}&body=${encodeURIComponent($t('mail.body'))}`"
+                class="inline-flex items-center gap-2 rounded-lg bg-emerald-100 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+              >
+                <img
+                  src="~/assets/icones/mail.svg"
+                  alt=""
+                  class="h-4 w-4"
+                  aria-hidden="true"
+                />
+              </a>
+              <a
+                :href="`tel:`"
+                {phoneNumber}
+                class="inline-flex items-center gap-2 rounded-lg bg-emerald-100 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+              >
+                <img
+                  src="~/assets/icones/phone.svg"
+                  alt=""
+                  class="h-4 w-4"
+                  aria-hidden="true"
+                />
+              </a>
 
-            <a
-              :href="linkedinUrl"
-              target="_blank"
-              rel="noreferrer"
-              class="text-sm text-slate-600 underline decoration-slate-300 underline-offset-4 transition hover:text-slate-900 hover:decoration-slate-500"
-            >
-              LinkedIn
-            </a>
+              <a
+                :href="linkedinUrl"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center gap-2 rounded-lg bg-emerald-100 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+              >
+                <img
+                  src="~/assets/icones/linkedin.svg"
+                  alt=""
+                  class="h-4 w-4"
+                  aria-hidden="true"
+                />
+              </a>
+            </div>
 
             <p class="text-xs text-slate-500">
               © {{ year }} Florentin Bouchendhomme. {{ $t("footer.rights") }}
             </p>
           </div>
         </div>
-      </div>
-
-      <!-- Bottom note -->
-      <div
-        class="mt-8 rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3"
-      >
-        <p class="text-sm text-emerald-900">
-          Quick start:
-          <span class="font-medium">Tell me your stack (if you have one)</span>,
-          your priority (bugs/perf/features/from scratch), and whether you
-          prefer a <span class="font-medium">10h/20h retainer</span> or a
-          <span class="font-medium">1-2 week sprint</span>. I'll reply within
-          24h.
-        </p>
       </div>
     </div>
   </footer>
@@ -97,8 +106,4 @@ const year = new Date().getFullYear();
 
 const email = "test@test.fr";
 const linkedinUrl = "https://www.linkedin.com/profile";
-
-const subject = "Project inquiry - Retainer or sprint";
-const body =
-  "Hi Florentin,%0D%0A%0D%0AWe are looking for help with:%0D%0A- Context:%0D%0A- Stack:%0D%0A- Priority (bugs/perf/features/from scratch):%0D%0A- Estimated volume (10h/20h or sprint):%0D%0A%0D%0ARegards,%0D%0A";
 </script>
