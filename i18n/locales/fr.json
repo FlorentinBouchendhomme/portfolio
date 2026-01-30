@@ -1,16 +1,213 @@
 {
   "const": {
-    "job": "Développeur fullstack (PHP + JavaScript)",
-    "jobDescription": "blabla",
-    "offers": "Offers",
-    "testimonies": "Testimonies",
+    "job": "Développeur fullstack",
+    "jobDescription": "Symfony côté back, et front moderne (Nuxt / Next, Vue / React). Je construis des applications de zéro, j'ajoute des fonctionnalités, et je stabilise/optimise des produits existants.",
+    "offers": "Offres",
+    "testimonies": "Preuves",
     "contact": "Contact",
-    "cta": "Réserver un appel"
+    "cta": "Me contacter"
   },
+
+  "hero": {
+    "kicker": "Symfony - Nuxt / Next - Vue / React - Python",
+    "title": "On construit vite, proprement, et avec passion :D",
+    "subtitle": "Je peux vous développer des applications sur-mesure, ajouter des fonctionnalités à un produit existant, corriger des bugs et optimiser les performances de vos projets. Communication claire, pull requests propres, et livraisons régulières.",
+    "bullets": [
+      {
+        "label": "Application de zéro : API, back-office, front moderne",
+        "explanation": "API = la partie serveur qui expose vos données.\nBack-office = interface d'administration.\nFront = l'interface côté utilisateur."
+      },
+      {
+        "label": "Nouvelles fonctionnalités : découpage intelligent, livraison rapide",
+        "explanation": "Découpage en petites fonctions.\nLivraison de ces fonctionnalités testables.\nValidation au fur et à mesure."
+      },
+      {
+        "label": "Bugs & performance : stabilisation en production + optimisations ciblées",
+        "explanation": "Analyse des logs si existant.\nCorrection d'erreurs et optimisation des requêtes.\nMise en cache si besoin.\nRéduction de dette technique (documentation manquante, code obsolète, etc.)"
+      }
+    ],
+    "rightCard": {
+      "items": [
+        {
+          "title": "Forfait 10h / mois",
+          "value": "À partir de 700€ / mois",
+          "explanation": "Idéal si vous souhaitez un renfort régulier pour de la maintenance, de petites évolutions ou de la stabilisation."
+        },
+        {
+          "title": "Stabilisation & performance",
+          "value": "1 500€ à 3 500€ (2-5 jours)",
+          "explanation": "Quand la prod est lente ou instable : audit express, correctifs prioritaires, optimisations ciblées, puis un plan d'amélioration. Durée selon le périmètre."
+        },
+        {
+          "title": "Application sur-mesure",
+          "value": "Sur devis",
+          "explanation": "Pour un MVP ou une application complète : je cadre le scope et je propose un plan de livraison."
+        }
+      ]
+    },
+    "primaryCta": "Discutons ensemble",
+    "secondaryCta": "Voir les offres"
+  },
+
+  "offers": {
+    "title": "Offres",
+    "subtitle": "Des formats simples, adaptés à une collaboration efficace : périmètre cadré, communication claire, livraison régulière.",
+    "disclaimer": "Chaque projet est différent.\nUn appel vaut mieux que mille messages ! On clarifie le contexte et la zone d'impact, puis je vous confirme un tarif adapté à la complexité, aux délais et au niveau d'urgence.",
+
+    "includedLabel": "Inclus",
+    "notIncludedLabel": "Non inclus",
+    "ctaLabel": "Contactez-moi",
+    "priceLabel": "Prix",
+
+    "retainer10": {
+      "name": "Forfait mensuel 10h",
+      "for": "Idéal pour de la maintenance, de petites évolutions et de la stabilisation continue.",
+      "includes": [
+        "Priorisation + mini backlog",
+        "Corrections de bugs et petites fonctionnalités",
+        "Pull requests, revues et suivi",
+        "Point rapide + mini reporting"
+      ],
+      "excludes": ["Astreinte / urgence 24/7", "Support illimité hors scope"],
+      "price": "À partir de 700€ / mois"
+    },
+
+    "retainer20": {
+      "name": "Forfait mensuel 20h",
+      "for": "Idéal pour livrer des fonctionnalités en continu et réduire la dette technique.",
+      "includes": [
+        "Roadmap court terme + backlog cadré",
+        "Développement de fonctionnalités",
+        "Stabilisation + refactorisation ciblée",
+        "Tests/CI si nécessaire"
+      ],
+      "excludes": ["Astreinte / urgence 24/7", "Reprise totale sans cadrage"],
+      "price": "À partir de 1 300€ / mois"
+    },
+
+    "sprint": {
+      "name": "Stabilisation & performance (2 à 5 jours)",
+      "for": "Quand la production est instable, lente, ou que des erreurs coûtent cher.",
+      "includes": [
+        "Audit rapide (logs, performance, points de friction)",
+        "Correctifs prioritaires",
+        "Optimisations ciblées (base de données, cache, front)",
+        "Rapport + backlog d'améliorations"
+      ],
+      "price": "1 500€ à 4 000€ selon le périmètre"
+    },
+
+    "fromScratch": {
+      "name": "Créer de zéro / MVP",
+      "for": "Conception et livraison d'une première version utilisable rapidement.",
+      "includes": [
+        "Cadrage fonctionnel (MVP) + plan technique",
+        "Setup du projet, authentification, API, pages clés",
+        "Environnements et tests",
+        "Déploiement + documentation courte",
+        "Application clefs en main"
+      ],
+      "price": "Sur devis"
+    },
+
+    "conditionsTitle": "Conditions",
+    "conditions": [
+      "Prix indicatifs (HT).",
+      "Les tarifs affichés n'incluent pas les coûts tiers (hébergement, licences, etc.).",
+      "Urgence possible, sous réserve d'ajustement des tarifs.",
+      "Toute demande supplémentaire fera l'objet d'un nouveau devis."
+    ]
+  },
+
+  "proof": {
+    "title": "Preuves (anonymisées)",
+    "subtitle": "La plupart de mes projets professionnels sont privés. Voici des exemples anonymisés de ce que je fais régulièrement.",
+    "labels": {
+      "context": "Contexte",
+      "problem": "Problème",
+      "actions": "Actions",
+      "result": "Résultat"
+    },
+    "items": [
+      {
+        "title": "Refonte d'un produit legacy → API + perf + RGPD",
+        "context": "Application existante (PHP natif), difficile à maintenir",
+        "problem": "Lenteurs, dette technique, pas de base solide pour évoluer + besoins RGPD",
+        "actions": "Conception d'une API, refactor progressif, optimisation des endpoints, sécurisation des données, mise en place de règles RGPD (minimisation, gestion des accès, suppression/export).",
+        "result": "Performances améliorées, base plus stable et maintenable, évolutions plus rapides, conformité RGPD mieux cadrée."
+      },
+      {
+        "title": "Refonte d'un site vitrine (architecture)",
+        "context": "Site vitrine à moderniser + besoin de clarté sur les projets",
+        "problem": "Design/structure datés, contenu difficile à parcourir, peu optimisé SEO/perf",
+        "actions": "Restructuration des pages, intégration front moderne, optimisation des images, performance (LCP/CLS), mise en place de sections projets/avis, SEO de base (meta, structure, titres).",
+        "result": "Site plus clair et pro, navigation plus fluide, meilleures perfs, contenu plus lisible pour convertir."
+      }
+    ]
+  },
+
+  "process": {
+    "title": "Processus",
+    "subtitle": "Une méthode simple : cadrer vite, livrer propre, et garder de la visibilité.",
+    "durationBadge": "2 à 5 jours (selon périmètre)",
+    "aria": {
+      "stepWord": "Étape",
+      "scrollerLabel": "Défilement horizontal du processus"
+    },
+    "cards": {
+      "whatYouGetTitle": "Ce que vous avez",
+      "whatYouGetText": "Un scope clair, des PR propres, et un résumé court.",
+      "outputTitle": "Sortie",
+      "outputText": "Améliorations livrées + backlog des prochaines étapes."
+    },
+    "hint": "Scroll pour naviguer · Snap activé",
+    "steps": [
+      { "title": "Appel", "text": "20 min : contexte, objectif, contraintes." },
+      { "title": "Cadrage", "text": "Scope, priorités, livrables, planning." },
+      {
+        "title": "Proposition",
+        "text": "Format (forfait/sprint), budget, plan d’exécution."
+      },
+      {
+        "title": "Livraison",
+        "text": "PRs propres, points réguliers, transparence."
+      },
+      { "title": "Suivi", "text": "Reporting + prochaines étapes." }
+    ]
+  },
+
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Décrivez-moi votre contexte (stack, priorité, délai, contraintes, etc.). Je vous réponds sous 24h.",
+    "fields": {
+      "name": "Nom / Prénom (ou les deux)",
+      "namePlaceholder": "Paul NOMTROPCOOL",
+      "mail": "Email",
+      "mailPlaceholder": "contact[at]entreprise[dot]fr",
+      "company": "Société (optionnel)",
+      "companyPlaceholder": "Une belle entreprise",
+      "message": "Message",
+      "messagePlaceholder": "Vous pouvez copier / coller le message à côté pour être plus rapide, mais vous ne serez plus original :/",
+      "cta": "Envoyer"
+    },
+    "mail": "M'envoyer un email",
+    "formTitle": "C'est ici que j'apprends à vous connaître !",
+    "copyMe": "Copiez-moi !",
+    "copied": "Copié dans le presse-papiers !",
+    "template": "Exemple de message",
+    "copy": "copier / coller"
+  },
+
   "footer": {
-    "description": "blabla",
-    "availability": "Disponibilités : soirs + et week-end (remote possible)",
-    "email": "Me contacter",
-    "rights": "Tous droits réservés."
+    "availability": "Disponibilités : en soirée (et week-end si besoin), remote-friendly",
+    "rights": "Tous droits réservés.",
+    "quickStart": {
+      "text": "Pour démarrer rapidement : envoyez-moi votre stack, votre priorité (de zéro / fonctionnalités / bugs / performance) et le format souhaité (10h/20h ou sprint). Réponse sous 24-48h."
+    }
+  },
+
+  "mail": {
+    "subject": "Demande de projet",
+    "body": "Bonjour Florentin,\n\nNous aurions besoin d'un coup de main avec :\n- Contexte : \n- Language(s) utilisé(s) : \n- Priorité (bugs / performance / nouveauté / de zéro) : \n- Ce que vous souhaitez (10h / 20h / semaine / plus ?) : \n\nCordialement,\n"
   }
 }

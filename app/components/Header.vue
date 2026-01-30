@@ -68,15 +68,6 @@
         >
           {{ $t("const.contact") }}
         </a>
-
-        <div class="mx-2 h-6 w-px bg-slate-200"></div>
-
-        <a
-          href="#contact"
-          class="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-        >
-          {{ $t("const.cta") }}
-        </a>
       </nav>
 
       <!-- Mobile button -->
@@ -149,16 +140,6 @@
           >
             {{ $t("const.contact") }}
           </a>
-
-          <div class="pt-2">
-            <a
-              href="#contact"
-              class="inline-flex w-full items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-              @click="close()"
-            >
-              {{ $t("const.cta") }}
-            </a>
-          </div>
         </div>
       </div>
     </div>
