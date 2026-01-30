@@ -16,9 +16,10 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/i18n"],
 
   i18n: {
+    baseUrl: 'https://florentinbouchendhomme.dev',
     locales: [
-      { code: "fr", name: "Français", file: "fr.json" },
-      { code: "en", name: "English", file: "en.json" },
+      { code: "fr", language: "fr-FR", name: "Français", file: "fr.json" },
+      { code: "en", language: "en-US", name: "English", file: "en.json" },
     ],
     defaultLocale: "fr",
     langDir: "locales",

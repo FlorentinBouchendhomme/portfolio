@@ -1,16 +1,213 @@
 {
   "const": {
-    "job": "Fullstack developper (PHP + JavaScript)",
-    "jobDescription":"blabla",
-    "offers": "Offres",
-    "testimonies": "Témoignages",
+    "job": "Fullstack Developer",
+    "jobDescription": "Symfony on the back, and modern front (Nuxt / Next, Vue / React). I build applications from scratch, add features, and stabilize/optimize existing products.",
+    "offers": "Offers",
+    "testimonies": "Proof",
     "contact": "Contact",
-    "cta": "Book a call"
+    "cta": "Get in touch"
   },
+
+  "hero": {
+    "kicker": "Symfony - Nuxt / Next - Vue / React - Python",
+    "title": "We build fast, clean, and with passion :D",
+    "subtitle": "I can develop custom applications for you, add features to an existing product, fix bugs and optimize the performance of your projects. Clear communication, clean pull requests, and regular deliveries.",
+    "bullets": [
+      {
+        "label": "Application from scratch: API, back-office, modern front",
+        "explanation": "API = the server part that exposes your data.\nBack-office = admin interface.\nFront = user-facing interface."
+      },
+      {
+        "label": "New features: smart breakdown, fast delivery",
+        "explanation": "Breakdown into small functions.\nDelivery of testable features.\nValidation as we go."
+      },
+      {
+        "label": "Bugs & performance: production stabilization + targeted optimizations",
+        "explanation": "Log analysis if existing.\nError fixes and query optimization.\nCaching if needed.\nTechnical debt reduction (missing documentation, obsolete code, etc.)"
+      }
+    ],
+    "rightCard": {
+      "items": [
+        {
+          "title": "10h/month retainer",
+          "value": "From €700/month",
+          "explanation": "Perfect if you want regular support for maintenance, small updates or stabilization."
+        },
+        {
+          "title": "Stabilization & performance",
+          "value": "€1,500 to €3,500 (2-5 days)",
+          "explanation": "When production is slow or unstable: quick audit, priority fixes, targeted optimizations, then an improvement plan. Duration depends on scope."
+        },
+        {
+          "title": "Custom application",
+          "value": "Custom quote",
+          "explanation": "For an MVP or complete application: I scope it and propose a delivery plan."
+        }
+      ]
+    },
+    "primaryCta": "Let's talk",
+    "secondaryCta": "See offers"
+  },
+
+  "offers": {
+    "title": "Offers",
+    "subtitle": "Simple formats, tailored for efficient collaboration: clear scope, clear communication, regular delivery.",
+    "disclaimer": "Every project is different.\nA call is worth a thousand messages! We clarify the context and area of impact, then I confirm a rate suited to complexity, timeline and urgency level.",
+
+    "includedLabel": "Included",
+    "notIncludedLabel": "Not included",
+    "ctaLabel": "Contact me",
+    "priceLabel": "Price",
+
+    "retainer10": {
+      "name": "Monthly retainer 10h",
+      "for": "Perfect for maintenance, small updates and continuous stabilization.",
+      "includes": [
+        "Prioritization + mini backlog",
+        "Bug fixes and small features",
+        "Pull requests, reviews and follow-up",
+        "Quick check-in + mini reporting"
+      ],
+      "excludes": ["On-call / 24/7 urgency", "Unlimited support outside scope"],
+      "price": "From €700/month"
+    },
+
+    "retainer20": {
+      "name": "Monthly retainer 20h",
+      "for": "Perfect for delivering features continuously and reducing technical debt.",
+      "includes": [
+        "Short-term roadmap + scoped backlog",
+        "Feature development",
+        "Stabilization + targeted refactoring",
+        "Tests/CI if needed"
+      ],
+      "excludes": ["On-call / 24/7 urgency", "Total overhaul without scoping"],
+      "price": "From €1,300/month"
+    },
+
+    "sprint": {
+      "name": "Stabilization & performance (2 to 5 days)",
+      "for": "When production is unstable, slow, or errors are costing you.",
+      "includes": [
+        "Quick audit (logs, performance, pain points)",
+        "Priority fixes",
+        "Targeted optimizations (database, cache, front)",
+        "Report + improvement backlog"
+      ],
+      "price": "€1,500 to €4,000 depending on scope"
+    },
+
+    "fromScratch": {
+      "name": "Build from scratch / MVP",
+      "for": "Design and delivery of a first usable version quickly.",
+      "includes": [
+        "Functional scoping (MVP) + technical plan",
+        "Project setup, authentication, API, key pages",
+        "Environments and tests",
+        "Deployment + short documentation",
+        "Ready-to-use application"
+      ],
+      "price": "Custom quote"
+    },
+
+    "conditionsTitle": "Conditions",
+    "conditions": [
+      "Indicative prices (excl. tax).",
+      "Listed rates do not include third-party costs (hosting, licenses, etc.).",
+      "Urgency possible, subject to rate adjustment.",
+      "Any additional request will be subject to a new quote."
+    ]
+  },
+
+  "proof": {
+    "title": "Proof (anonymized)",
+    "subtitle": "Most of my professional projects are private. Here are anonymized examples of what I do regularly.",
+    "labels": {
+      "context": "Context",
+      "problem": "Problem",
+      "actions": "Actions",
+      "result": "Result"
+    },
+    "items": [
+      {
+        "title": "Legacy product overhaul → API + performance + GDPR",
+        "context": "Existing application (vanilla PHP), hard to maintain",
+        "problem": "Slow performance, technical debt, no solid foundation to evolve + GDPR needs",
+        "actions": "API design, progressive refactor, endpoint optimization, data security, GDPR rules implementation (minimization, access management, deletion/export).",
+        "result": "Improved performance, more stable and maintainable base, faster evolution, better GDPR compliance."
+      },
+      {
+        "title": "Website overhaul (architecture)",
+        "context": "Website to modernize + need for project clarity",
+        "problem": "Outdated design/structure, hard to browse content, poorly optimized SEO/performance",
+        "actions": "Page restructuring, modern front integration, image optimization, performance (LCP/CLS), project/testimonial sections, basic SEO (meta, structure, titles).",
+        "result": "Clearer and more professional site, smoother navigation, better performance, more readable content to convert."
+      }
+    ]
+  },
+
+  "process": {
+    "title": "Process",
+    "subtitle": "A simple method: scope fast, deliver clean, and stay visible.",
+    "durationBadge": "2 to 5 days (depending on scope)",
+    "aria": {
+      "stepWord": "Step",
+      "scrollerLabel": "Horizontal process scrolling"
+    },
+    "cards": {
+      "whatYouGetTitle": "What you get",
+      "whatYouGetText": "Clear scope, clean PRs, and a short summary.",
+      "outputTitle": "Output",
+      "outputText": "Delivered improvements + next steps backlog."
+    },
+    "hint": "Scroll to navigate · Snap enabled",
+    "steps": [
+      { "title": "Call", "text": "20 min: context, goal, constraints." },
+      { "title": "Scoping", "text": "Scope, priorities, deliverables, timeline." },
+      {
+        "title": "Proposal",
+        "text": "Format (retainer/sprint), budget, execution plan."
+      },
+      {
+        "title": "Delivery",
+        "text": "Clean PRs, regular check-ins, transparency."
+      },
+      { "title": "Follow-up", "text": "Reporting + next steps." }
+    ]
+  },
+
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Tell me about your context (stack, priority, timeline, constraints, etc.). I'll get back to you within 24h.",
+    "fields": {
+      "name": "Name / First name (or both)",
+      "namePlaceholder": "John COOLNAME",
+      "mail": "Email",
+      "mailPlaceholder": "contact[at]company[dot]com",
+      "company": "Company (optional)",
+      "companyPlaceholder": "A great company",
+      "message": "Message",
+      "messagePlaceholder": "You can copy / paste the message beside to be faster, but you won't be original anymore :/",
+      "cta": "Send"
+    },
+    "mail": "Send me an email",
+    "formTitle": "This is where I get to know you!",
+    "copyMe": "Copy me!",
+    "copied": "Copied to clipboard!",
+    "template": "Message example",
+    "copy": "copy / paste"
+  },
+
   "footer": {
-    "description": "blabla",
-    "availability": "Availability: evenings + weekend (remote-friendly)",
-    "email": "Email me",
-    "rights": "All rights reserved."
+    "availability": "Availability: evenings (and weekends if needed), remote-friendly",
+    "rights": "All rights reserved.",
+    "quickStart": {
+      "text": "To get started quickly: send me your stack, your priority (from scratch / features / bugs / performance) and desired format (10h/20h or sprint). Response within 24-48h."
+    }
+  },
+
+  "mail": {
+    "subject": "Project request",
+    "body": "Hi Florentin,\n\nWe could use some help with:\n- Context: \n- Language(s) used: \n- Priority (bugs / performance / new feature / from scratch): \n- What you're looking for (10h / 20h / week / more ?): \n\nBest regards,\n"
   }
 }
