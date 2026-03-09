@@ -2,16 +2,25 @@
   "const": {
     "job": "Développeur fullstack",
     "jobDescription": "Symfony côté back, et front moderne (Nuxt / Next, Vue / React). Je construis des applications de zéro, j'ajoute des fonctionnalités, et je stabilise/optimise des produits existants.",
+    "home": "Accueil",
     "offers": "Offres",
-    "testimonies": "Preuves",
+    "about": "Parcours",
+    "testimonies": "Réalisations",
     "contact": "Contact",
-    "cta": "Me contacter"
+    "cta": "Me contacter",
+    "portfolioVersion": "florentin-portfolio v1.0.0",
+    "menu": "Menu"
   },
-
   "hero": {
+    "badge": "Disponible - Remote",
+    "headline1": "Je renforce",
+    "headline2": "vos équipes",
+    "headline3": "le soir & le week-end.",
     "kicker": "Symfony - Nuxt / Next - Vue / React - Python",
-    "title": "On construit vite, proprement, et avec passion :D",
-    "subtitle": "Je peux vous développer des applications sur-mesure, ajouter des fonctionnalités à un produit existant, corriger des bugs et optimiser les performances de vos projets. Communication claire, pull requests propres, et livraisons régulières.",
+    "title": "Je renforce vos équipes le soir et le week-end.",
+    "subtitle": "Développeur fullstack disponible en freelance. J'intègre vos projets existants ou construis de zéro — avec des PR propres, une communication claire et des livraisons régulières.",
+    "primaryCta": "Discutons ensemble",
+    "secondaryCta": "Voir les offres",
     "bullets": [
       {
         "label": "Application de zéro : API, back-office, front moderne",
@@ -30,12 +39,12 @@
       "items": [
         {
           "title": "Forfait 10h / mois",
-          "value": "À partir de 700€ / mois",
+          "value": "À partir de 900€ / mois",
           "explanation": "Idéal si vous souhaitez un renfort régulier pour de la maintenance, de petites évolutions ou de la stabilisation."
         },
         {
           "title": "Stabilisation & performance",
-          "value": "1 500€ à 3 500€ (2-5 jours)",
+          "value": "1 500€ à 4 000€ (2-5 jours)",
           "explanation": "Quand la prod est lente ou instable : audit express, correctifs prioritaires, optimisations ciblées, puis un plan d'amélioration. Durée selon le périmètre."
         },
         {
@@ -44,21 +53,126 @@
           "explanation": "Pour un MVP ou une application complète : je cadre le scope et je propose un plan de livraison."
         }
       ]
-    },
-    "primaryCta": "Discutons ensemble",
-    "secondaryCta": "Voir les offres"
+    }
   },
-
+  "terminal": {
+    "arrow": "=>",
+    "helpTitle": "Commandes disponibles :",
+    "helpWhoami": "— qui suis-je ?",
+    "helpSkills": "— stack technique",
+    "helpProjects": "— mes projets",
+    "helpContact": "— me contacter",
+    "helpAvailability": "— disponibilité",
+    "helpEcho": "— afficher un texte",
+    "helpClear": "— effacer le terminal",
+    "helpHidden": "... et d'autres commandes cachées",
+    "whoamiName": "Florentin Bouchend'homme",
+    "skillsTitle": "Stack technique :",
+    "projectsWip": "Projets en cours :",
+    "projectsDone": "Réalisations clients :",
+    "availability": "disponible",
+    "status": "Statut",
+    "projectDracula": {
+      "title": "Dracula vs Van Helsing",
+      "description": "jeu multijoueur (Next/Nuxt/Sockets)"
+    },
+    "projectWordgrid": {
+      "title": "Mots fléchés",
+      "description": "générateur & solveur (Python)"
+    },
+    "contactTitle": "Me contacter :",
+    "contactForm": "Formulaire en bas de page",
+    "contactEmail": "Ou directement par email",
+    "contactDelay": "Réponse sous 24h en semaine.",
+    "availTitle": "Disponibilité :",
+    "availFormat": "Format   => Remote uniquement",
+    "availLanguages": "Langues  => Français - English",
+    "bootWelcome": "Bienvenue. Tapez help pour commencer.",
+    "skillsBackend": "Back-end",
+    "skillsFrontend": "Front-end",
+    "skillsDb": "Base de données",
+    "skillsTools": "Outils",
+    "echo": {
+      "usage": "usage",
+      "arg": "votre texte"
+    },
+    "food": {
+      "1": "Carbonnade flamande",
+      "2": "Riz chipo",
+      "3": "Sushi"
+    },
+    "welcome": "Bienvenue",
+    "write": "Tapez",
+    "toStart": "pour commencer",
+    "stop": "clear pour arrêter",
+    "enter": "entré",
+    "placeholder": "essayez : help",
+    "commandList": "pour la liste des commandes",
+    "unknownCommand": "Commande inconnue"
+  },
+  "about": {
+    "title": "Parcours",
+    "intro": "Double master en gestion de projet et développement fullstack. Plusieurs années en CDI sur des projets Symfony / Vue, avec une réelle appétence pour les interfaces modernes et les architectures propres.",
+    "education": [
+      {
+        "year": "2023-2025",
+        "label": "Double master",
+        "detail": "Gestion de projet & Développeur fullstack"
+      },
+      {
+        "year": "2022-2023",
+        "label": "Licence",
+        "detail": "Développeur et concepteur d'applications"
+      },
+      {
+        "year": "2020-2022",
+        "label": "IUT Informatique",
+        "detail": "Développeur web"
+      }
+    ],
+    "certifications": [
+      {
+        "label": "TOEIC - 2024",
+        "detail": "Anglais professionnel (945/990)"
+      }
+    ],
+    "stack": {
+      "title": "Stack",
+      "categories": [
+        {
+          "label": "Back-end",
+          "items": "Symfony - Python"
+        },
+        {
+          "label": "Front-end",
+          "items": "Vue - Nuxt - React - Next.js - TypeScript"
+        },
+        {
+          "label": "Base de données",
+          "items": "PostgreSQL - MySQL"
+        },
+        {
+          "label": "Outils",
+          "items": "Git - Docker - CI/CD"
+        }
+      ]
+    },
+    "hexTitle": "Stack technique",
+    "hexHint": "Cliquez ou survolez pour explorer",
+    "tagline": "Remote - Bilingue FR/EN - Soir & week-end",
+    "paragraphs": [
+      "Développeur fullstack avec plusieurs années d'expérience en CDI, je travaille principalement sur des stacks Symfony / Nuxt. Je suis bilingue français / anglais, ce qui me permet de collaborer aussi bien avec des équipes francophones qu'anglophones.",
+      "Je suis disponible en soirée et le week-end pour des missions freelance en remote. Mon fonctionnement : je m'intègre proprement dans votre workflow existant (Git, PR, reviews), sans friction."
+    ]
+  },
   "offers": {
     "title": "Offres",
     "subtitle": "Des formats simples, adaptés à une collaboration efficace : périmètre cadré, communication claire, livraison régulière.",
     "disclaimer": "Chaque projet est différent.\nUn appel vaut mieux que mille messages ! On clarifie le contexte et la zone d'impact, puis je vous confirme un tarif adapté à la complexité, aux délais et au niveau d'urgence.",
-
     "includedLabel": "Inclus",
     "notIncludedLabel": "Non inclus",
     "ctaLabel": "Contactez-moi",
     "priceLabel": "Prix",
-
     "retainer10": {
       "name": "Forfait mensuel 10h",
       "for": "Idéal pour de la maintenance, de petites évolutions et de la stabilisation continue.",
@@ -69,9 +183,8 @@
         "Point rapide + mini reporting"
       ],
       "excludes": ["Astreinte / urgence 24/7", "Support illimité hors scope"],
-      "price": "À partir de 700€ / mois"
+      "price": "À partir de 900€ / mois"
     },
-
     "retainer20": {
       "name": "Forfait mensuel 20h",
       "for": "Idéal pour livrer des fonctionnalités en continu et réduire la dette technique.",
@@ -82,9 +195,8 @@
         "Tests/CI si nécessaire"
       ],
       "excludes": ["Astreinte / urgence 24/7", "Reprise totale sans cadrage"],
-      "price": "À partir de 1 300€ / mois"
+      "price": "À partir de 1 600€ / mois"
     },
-
     "sprint": {
       "name": "Stabilisation & performance (2 à 5 jours)",
       "for": "Quand la production est instable, lente, ou que des erreurs coûtent cher.",
@@ -96,7 +208,6 @@
       ],
       "price": "1 500€ à 4 000€ selon le périmètre"
     },
-
     "fromScratch": {
       "name": "Créer de zéro / MVP",
       "for": "Conception et livraison d'une première version utilisable rapidement.",
@@ -109,7 +220,6 @@
       ],
       "price": "Sur devis"
     },
-
     "conditionsTitle": "Conditions",
     "conditions": [
       "Prix indicatifs (HT).",
@@ -118,10 +228,9 @@
       "Toute demande supplémentaire fera l'objet d'un nouveau devis."
     ]
   },
-
   "proof": {
-    "title": "Preuves (anonymisées)",
-    "subtitle": "La plupart de mes projets professionnels sont privés. Voici des exemples anonymisés de ce que je fais régulièrement.",
+    "title": "Réalisations",
+    "subtitle": "Deux projets concrets, réalisés en conditions réelles.",
     "labels": {
       "context": "Contexte",
       "problem": "Problème",
@@ -130,25 +239,31 @@
     },
     "items": [
       {
-        "title": "Refonte d'un produit legacy → API + perf + RGPD",
-        "context": "Application existante (PHP natif), difficile à maintenir",
-        "problem": "Lenteurs, dette technique, pas de base solide pour évoluer + besoins RGPD",
-        "actions": "Conception d'une API, refactor progressif, optimisation des endpoints, sécurisation des données, mise en place de règles RGPD (minimisation, gestion des accès, suppression/export).",
-        "result": "Performances améliorées, base plus stable et maintenable, évolutions plus rapides, conformité RGPD mieux cadrée."
+        "title": "Migration d'un outil interne legacy vers Symfony / Vue",
+        "context": "Outil interne en PHP natif, non maintenu, sans structure claire.",
+        "problem": "Code impossible à faire évoluer, zéro séparation des responsabilités, pas de tests, risques de sécurité.",
+        "actions": "Réécriture complète from scratch : API Symfony, front Vue, mise en place d'une architecture propre, authentification, déploiement.",
+        "result": "Outil pleinement opérationnel, équipe capable de faire évoluer la base sans friction, dette technique soldée."
       },
       {
-        "title": "Refonte d'un site vitrine (architecture)",
-        "context": "Site vitrine à moderniser + besoin de clarté sur les projets",
-        "problem": "Design/structure datés, contenu difficile à parcourir, peu optimisé SEO/perf",
-        "actions": "Restructuration des pages, intégration front moderne, optimisation des images, performance (LCP/CLS), mise en place de sections projets/avis, SEO de base (meta, structure, titres).",
-        "result": "Site plus clair et pro, navigation plus fluide, meilleures perfs, contenu plus lisible pour convertir."
+        "title": "Site vitrine WordPress — Agence d'architecture",
+        "context": "Agence souhaitant refondre son site vitrine pour mieux présenter ses projets.",
+        "problem": "Site existant daté, mal structuré, peu lisible sur mobile, aucune optimisation SEO.",
+        "actions": "En collaboration avec une graphiste, développement d'un thème WordPress sur-mesure : design moderne, structure claire, responsive, optimisation SEO, et formation de l'équipe pour la maintenance.",
+        "result": "Site moderne, rapide, bien référencé — livré dans les délais convenus."
+      },
+      {
+        "title": "Portfolio",
+        "context": "Besoin d'un portfolio clair et professionnel pour présenter mes offres et réalisations.",
+        "problem": "Absence de portfolio, difficulté à présenter mes compétences et expériences de manière structurée.",
+        "actions": "Conception et développement d'un portfolio moderne en Nuxt, avec une navigation fluide, une présentation claire de mes offres, et une section dédiée à mes réalisations.",
+        "result": "Portfolio professionnel, facile à naviguer, qui met en valeur mes compétences et expériences de manière efficace."
       }
     ]
   },
-
   "process": {
     "title": "Processus",
-    "subtitle": "Une méthode simple : cadrer vite, livrer propre, et garder de la visibilité.",
+    "subtitle": "Une méthode simple : cadrer vite, livrer propre, garder de la visibilité.",
     "durationBadge": "2 à 5 jours (selon périmètre)",
     "aria": {
       "stepWord": "Étape",
@@ -160,52 +275,58 @@
       "outputTitle": "Sortie",
       "outputText": "Améliorations livrées + backlog des prochaines étapes."
     },
-    "hint": "Scroll pour naviguer · Snap activé",
+    "hint": "Scroll pour naviguer - Snap activé",
     "steps": [
-      { "title": "Appel", "text": "20 min : contexte, objectif, contraintes." },
-      { "title": "Cadrage", "text": "Scope, priorités, livrables, planning." },
+      {
+        "title": "Appel",
+        "text": "20 min : contexte, objectif, contraintes."
+      },
+      {
+        "title": "Cadrage",
+        "text": "Scope, priorités, livrables, planning."
+      },
       {
         "title": "Proposition",
-        "text": "Format (forfait/sprint), budget, plan d’exécution."
+        "text": "Format (forfait/sprint), budget, plan d'exécution."
       },
       {
         "title": "Livraison",
         "text": "PRs propres, points réguliers, transparence."
       },
-      { "title": "Suivi", "text": "Reporting + prochaines étapes." }
+      {
+        "title": "Suivi",
+        "text": "Reporting + prochaines étapes."
+      }
     ]
   },
-
   "contact": {
     "title": "Contact",
-    "subtitle": "Décrivez-moi votre contexte (stack, priorité, délai, contraintes, etc.). Je vous réponds sous 24h.",
+    "subtitle": "Décrivez-moi votre contexte (stack, priorité, délai, contraintes). Je réponds sous 24h.",
     "fields": {
-      "name": "Nom / Prénom (ou les deux)",
-      "namePlaceholder": "Paul NOMTROPCOOL",
+      "name": "Nom / Prénom",
+      "namePlaceholder": "Paul Dupont",
       "mail": "Email",
-      "mailPlaceholder": "contact[at]entreprise[dot]fr",
+      "mailPlaceholder": "contact[at]entreprise.fr",
       "company": "Société (optionnel)",
-      "companyPlaceholder": "Une belle entreprise",
+      "companyPlaceholder": "Ma belle entreprise",
       "message": "Message",
-      "messagePlaceholder": "Vous pouvez copier / coller le message à côté pour être plus rapide, mais vous ne serez plus original :/",
+      "messagePlaceholder": "Vous pouvez copier le template à gauche pour aller plus vite.",
       "cta": "Envoyer"
     },
     "mail": "M'envoyer un email",
-    "formTitle": "C'est ici que j'apprends à vous connaître !",
-    "copyMe": "Copiez-moi !",
-    "copied": "Copié dans le presse-papiers !",
-    "template": "Exemple de message",
-    "copy": "copier / coller"
+    "formTitle": "Parlez-moi de votre projet",
+    "copyMe": "Copier le template",
+    "copied": "Copié !",
+    "template": "Template",
+    "copy": "copier"
   },
-
   "footer": {
-    "availability": "Disponibilités : en soirée (et week-end si besoin), remote-friendly",
+    "availability": "Disponible en soirée et week-end - Remote",
     "rights": "Tous droits réservés.",
     "quickStart": {
       "text": "Pour démarrer rapidement : envoyez-moi votre stack, votre priorité (de zéro / fonctionnalités / bugs / performance) et le format souhaité (10h/20h ou sprint). Réponse sous 24-48h."
     }
   },
-
   "mail": {
     "subject": "Demande de projet",
     "body": "Bonjour Florentin,\n\nNous aurions besoin d'un coup de main avec :\n- Contexte : \n- Language(s) utilisé(s) : \n- Priorité (bugs / performance / nouveauté / de zéro) : \n- Ce que vous souhaitez (10h / 20h / semaine / plus ?) : \n\nCordialement,\n"

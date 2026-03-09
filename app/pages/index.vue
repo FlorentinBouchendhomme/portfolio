@@ -4,6 +4,10 @@
       <SectionsHero />
     </section>
 
+    <section id="about" class="scroll-mt-24">
+      <SectionsAbout />
+    </section>
+
     <section id="offers" class="scroll-mt-24">
       <SectionsOffers />
     </section>

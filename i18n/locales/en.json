@@ -1,21 +1,30 @@
 {
   "const": {
-    "job": "Fullstack Developer",
-    "jobDescription": "Symfony on the back, and modern front (Nuxt / Next, Vue / React). I build applications from scratch, add features, and stabilize/optimize existing products.",
+    "job": "Full-stack developer",
+    "jobDescription": "Symfony on the back-end, modern front-end (Nuxt / Next, Vue / React). I build applications from scratch, add features, and stabilize/optimize existing products.",
+    "home": "Home",
     "offers": "Offers",
-    "testimonies": "Proof",
+    "about": "Background",
+    "testimonies": "Projects",
     "contact": "Contact",
-    "cta": "Get in touch"
+    "cta": "Get in touch",
+    "portfolioVersion": "florentin-portfolio v1.0.0",
+    "menu": "Menu"
   },
-
   "hero": {
+    "badge": "Available - Remote",
+    "headline1": "I strengthen",
+    "headline2": "your teams",
+    "headline3": "evenings & weekends.",
     "kicker": "Symfony - Nuxt / Next - Vue / React - Python",
-    "title": "We build fast, clean, and with passion :D",
-    "subtitle": "I can develop custom applications for you, add features to an existing product, fix bugs and optimize the performance of your projects. Clear communication, clean pull requests, and regular deliveries.",
+    "title": "I strengthen your teams evenings and weekends.",
+    "subtitle": "Full-stack developer available for freelance work. I integrate into your existing projects or build from scratch — with clean PRs, clear communication, and regular deliveries.",
+    "primaryCta": "Let's talk",
+    "secondaryCta": "View offers",
     "bullets": [
       {
-        "label": "Application from scratch: API, back-office, modern front",
-        "explanation": "API = the server part that exposes your data.\nBack-office = admin interface.\nFront = user-facing interface."
+        "label": "Build from scratch: API, back-office, modern front-end",
+        "explanation": "API = the server-side that exposes your data.\nBack-office = admin interface.\nFront = user-facing interface."
       },
       {
         "label": "New features: smart breakdown, fast delivery",
@@ -23,20 +32,20 @@
       },
       {
         "label": "Bugs & performance: production stabilization + targeted optimizations",
-        "explanation": "Log analysis if existing.\nError fixes and query optimization.\nCaching if needed.\nTechnical debt reduction (missing documentation, obsolete code, etc.)"
+        "explanation": "Log analysis if existing.\nError fixes and query optimization.\nCaching if needed.\nTechnical debt reduction (missing docs, obsolete code, etc.)"
       }
     ],
     "rightCard": {
       "items": [
         {
-          "title": "10h/month retainer",
-          "value": "From €700/month",
-          "explanation": "Perfect if you want regular support for maintenance, small updates or stabilization."
+          "title": "10h / month package",
+          "value": "Starting from €900 / month",
+          "explanation": "Ideal if you want regular support for maintenance, small changes, or stabilization."
         },
         {
           "title": "Stabilization & performance",
-          "value": "€1,500 to €3,500 (2-5 days)",
-          "explanation": "When production is slow or unstable: quick audit, priority fixes, targeted optimizations, then an improvement plan. Duration depends on scope."
+          "value": "€1,500 to €4,000 (2-5 days)",
+          "explanation": "When production is slow or unstable: express audit, priority fixes, targeted optimizations, then an improvement plan. Duration depends on scope."
         },
         {
           "title": "Custom application",
@@ -44,84 +53,172 @@
           "explanation": "For an MVP or complete application: I scope it and propose a delivery plan."
         }
       ]
-    },
-    "primaryCta": "Let's talk",
-    "secondaryCta": "See offers"
+    }
   },
-
+  "terminal": {
+    "arrow": "=>",
+    "helpTitle": "Available commands:",
+    "helpWhoami": "— who am I?",
+    "helpSkills": "— tech stack",
+    "helpProjects": "— my projects",
+    "helpContact": "— contact me",
+    "helpAvailability": "— availability",
+    "helpEcho": "— display text",
+    "helpClear": "— clear terminal",
+    "helpHidden": "... and other hidden commands",
+    "whoamiName": "Florentin Bouchend'homme",
+    "skillsTitle": "Tech stack:",
+    "projectsWip": "Work in progress:",
+    "projectsDone": "Client projects:",
+    "status": "Status",
+    "availability": "available",
+    "projectDracula": {
+      "title": "Dracula vs Van Helsing",
+      "description": "multiplayer game (Next/Nuxt/Sockets)"
+    },
+    "projectWordgrid": {
+      "title": "Crossword grids",
+      "description": "generator & solver (Python)"
+    },
+    "contactTitle": "Contact me:",
+    "contactForm": "Form at bottom of page",
+    "contactEmail": "Or email directly",
+    "contactDelay": "Response within 24h on weekdays.",
+    "availTitle": "Availability:",
+    "availFormat": "Format   => Remote only",
+    "availLanguages": "Languages => French - English",
+    "bootWelcome": "Welcome. Type help to get started.",
+    "skillsBackend": "Back-end",
+    "skillsFrontend": "Front-end",
+    "skillsDb": "Database",
+    "skillsTools": "Tools",
+    "echo": {
+      "usage": "usage",
+      "arg": "your text"
+    },
+    "food": {
+      "1": "Carbonnade flamande",
+      "2": "Chipo rice",
+      "3": "Sushi"
+    },
+    "welcome": "Welcome",
+    "write": "Type",
+    "toStart": "to get started",
+    "stop": "clear to stop",
+    "enter": "enter",
+    "placeholder": "try: help",
+    "commandList": "for the command list",
+    "unknownCommand": "Unknown command"
+  },
+  "about": {
+    "title": "Background",
+    "intro": "Double master's in project management and full-stack development. Several years in permanent roles on Symfony / Vue projects, with real passion for modern interfaces and clean architectures.",
+    "education": [
+      {
+        "year": "2020-2022",
+        "label": "Double master's",
+        "detail": "Project Management - Full-stack Development"
+      }
+    ],
+    "certifications": [
+      {
+        "label": "TOEIC",
+        "detail": "Professional English — C1 level"
+      }
+    ],
+    "stack": {
+      "title": "Stack",
+      "categories": [
+        {
+          "label": "Back-end",
+          "items": "Symfony - Python"
+        },
+        {
+          "label": "Front-end",
+          "items": "Vue - Nuxt - React - Next.js - TypeScript"
+        },
+        {
+          "label": "Database",
+          "items": "PostgreSQL - MySQL"
+        },
+        {
+          "label": "Tools",
+          "items": "Git - Docker - CI/CD"
+        }
+      ]
+    },
+    "tagline": "Remote - Bilingual FR/EN - Evenings & weekends",
+    "paragraphs": [
+      "Full-stack developer with several years of permanent role experience, I work primarily on Symfony / Nuxt stacks. I'm bilingual French / English, which allows me to collaborate with both French-speaking and English-speaking teams.",
+      "I'm available evenings and weekends for freelance remote projects. My approach: I integrate smoothly into your existing workflow (Git, PRs, reviews), without friction."
+    ]
+  },
   "offers": {
     "title": "Offers",
-    "subtitle": "Simple formats, tailored for efficient collaboration: clear scope, clear communication, regular delivery.",
-    "disclaimer": "Every project is different.\nA call is worth a thousand messages! We clarify the context and area of impact, then I confirm a rate suited to complexity, timeline and urgency level.",
-
+    "subtitle": "Simple formats, adapted for efficient collaboration: clear scope, transparent communication, regular delivery.",
+    "disclaimer": "Every project is different.\nA call is worth a thousand messages! We clarify the context and impact area, then I confirm a rate adapted to complexity, timeline, and urgency.",
     "includedLabel": "Included",
     "notIncludedLabel": "Not included",
     "ctaLabel": "Contact me",
     "priceLabel": "Price",
-
     "retainer10": {
-      "name": "Monthly retainer 10h",
-      "for": "Perfect for maintenance, small updates and continuous stabilization.",
+      "name": "10h monthly package",
+      "for": "Ideal for maintenance, small changes, and continuous stabilization.",
       "includes": [
         "Prioritization + mini backlog",
         "Bug fixes and small features",
-        "Pull requests, reviews and follow-up",
-        "Quick check-in + mini reporting"
+        "Pull requests, reviews, and tracking",
+        "Quick sync + mini reporting"
       ],
-      "excludes": ["On-call / 24/7 urgency", "Unlimited support outside scope"],
-      "price": "From €700/month"
+      "excludes": ["24/7 on-call / emergency", "Unlimited support outside scope"],
+      "price": "Starting from €900 / month"
     },
-
     "retainer20": {
-      "name": "Monthly retainer 20h",
-      "for": "Perfect for delivering features continuously and reducing technical debt.",
+      "name": "20h monthly package",
+      "for": "Ideal for continuous feature delivery and technical debt reduction.",
       "includes": [
         "Short-term roadmap + scoped backlog",
         "Feature development",
         "Stabilization + targeted refactoring",
         "Tests/CI if needed"
       ],
-      "excludes": ["On-call / 24/7 urgency", "Total overhaul without scoping"],
-      "price": "From €1,300/month"
+      "excludes": ["24/7 on-call / emergency", "Complete overhaul without scoping"],
+      "price": "Starting from €1,600 / month"
     },
-
     "sprint": {
       "name": "Stabilization & performance (2 to 5 days)",
-      "for": "When production is unstable, slow, or errors are costing you.",
+      "for": "When production is unstable, slow, or errors are costly.",
       "includes": [
-        "Quick audit (logs, performance, pain points)",
+        "Quick audit (logs, performance, friction points)",
         "Priority fixes",
-        "Targeted optimizations (database, cache, front)",
+        "Targeted optimizations (database, cache, front-end)",
         "Report + improvement backlog"
       ],
       "price": "€1,500 to €4,000 depending on scope"
     },
-
     "fromScratch": {
       "name": "Build from scratch / MVP",
-      "for": "Design and delivery of a first usable version quickly.",
+      "for": "Design and delivery of a first usable version, fast.",
       "includes": [
         "Functional scoping (MVP) + technical plan",
         "Project setup, authentication, API, key pages",
         "Environments and tests",
         "Deployment + short documentation",
-        "Ready-to-use application"
+        "Turnkey application"
       ],
       "price": "Custom quote"
     },
-
     "conditionsTitle": "Conditions",
     "conditions": [
-      "Indicative prices (excl. tax).",
-      "Listed rates do not include third-party costs (hosting, licenses, etc.).",
-      "Urgency possible, subject to rate adjustment.",
+      "Indicative prices (excl. VAT).",
+      "Displayed rates do not include third-party costs (hosting, licenses, etc.).",
+      "Urgent requests possible, subject to rate adjustment.",
       "Any additional request will be subject to a new quote."
     ]
   },
-
   "proof": {
-    "title": "Proof (anonymized)",
-    "subtitle": "Most of my professional projects are private. Here are anonymized examples of what I do regularly.",
+    "title": "Projects",
+    "subtitle": "Two concrete projects, delivered in real conditions.",
     "labels": {
       "context": "Context",
       "problem": "Problem",
@@ -130,84 +227,96 @@
     },
     "items": [
       {
-        "title": "Legacy product overhaul → API + performance + GDPR",
-        "context": "Existing application (vanilla PHP), hard to maintain",
-        "problem": "Slow performance, technical debt, no solid foundation to evolve + GDPR needs",
-        "actions": "API design, progressive refactor, endpoint optimization, data security, GDPR rules implementation (minimization, access management, deletion/export).",
-        "result": "Improved performance, more stable and maintainable base, faster evolution, better GDPR compliance."
+        "title": "Migration of legacy internal tool to Symfony / Vue",
+        "context": "Internal tool in native PHP, unmaintained, no clear structure.",
+        "problem": "Code impossible to evolve, zero separation of concerns, no tests, security risks.",
+        "actions": "Complete rewrite from scratch: Symfony API, Vue front-end, clean architecture setup, authentication, deployment.",
+        "result": "Fully operational tool, team able to evolve the codebase smoothly, technical debt eliminated."
       },
       {
-        "title": "Website overhaul (architecture)",
-        "context": "Website to modernize + need for project clarity",
-        "problem": "Outdated design/structure, hard to browse content, poorly optimized SEO/performance",
-        "actions": "Page restructuring, modern front integration, image optimization, performance (LCP/CLS), project/testimonial sections, basic SEO (meta, structure, titles).",
-        "result": "Clearer and more professional site, smoother navigation, better performance, more readable content to convert."
+        "title": "WordPress brochure website — Architecture agency",
+        "context": "Agency wanting to redesign its brochure site to better showcase its projects.",
+        "problem": "Existing site outdated, poorly structured, unresponsive, no SEO optimization.",
+        "actions": "In collaboration with a designer, development of a custom WordPress theme: modern design, clear structure, responsive, SEO optimization, team training for maintenance.",
+        "result": "Modern, fast, well-ranked website — delivered on schedule."
+      },
+      {
+        "title": "Portfolio",
+        "context": "Need for a clear and professional portfolio to showcase my offers and projects.",
+        "problem": "No portfolio, difficulty presenting my skills and experience in a structured way.",
+        "actions": "Design and development of a modern Nuxt portfolio, with smooth navigation, clear presentation of my offers, and dedicated project section.",
+        "result": "Professional, easy-to-navigate portfolio that effectively showcases my skills and experience."
       }
     ]
   },
-
   "process": {
     "title": "Process",
-    "subtitle": "A simple method: scope fast, deliver clean, and stay visible.",
+    "subtitle": "A simple method: scope fast, deliver clean, maintain visibility.",
     "durationBadge": "2 to 5 days (depending on scope)",
     "aria": {
       "stepWord": "Step",
-      "scrollerLabel": "Horizontal process scrolling"
+      "scrollerLabel": "Horizontal scroll of process"
     },
     "cards": {
       "whatYouGetTitle": "What you get",
       "whatYouGetText": "Clear scope, clean PRs, and a short summary.",
       "outputTitle": "Output",
-      "outputText": "Delivered improvements + next steps backlog."
+      "outputText": "Delivered improvements + backlog of next steps."
     },
-    "hint": "Scroll to navigate · Snap enabled",
+    "hint": "Scroll to navigate - Snap enabled",
     "steps": [
-      { "title": "Call", "text": "20 min: context, goal, constraints." },
-      { "title": "Scoping", "text": "Scope, priorities, deliverables, timeline." },
+      {
+        "title": "Call",
+        "text": "20 min: context, goal, constraints."
+      },
+      {
+        "title": "Scoping",
+        "text": "Scope, priorities, deliverables, timeline."
+      },
       {
         "title": "Proposal",
-        "text": "Format (retainer/sprint), budget, execution plan."
+        "text": "Format (package/sprint), budget, execution plan."
       },
       {
         "title": "Delivery",
         "text": "Clean PRs, regular check-ins, transparency."
       },
-      { "title": "Follow-up", "text": "Reporting + next steps." }
+      {
+        "title": "Follow-up",
+        "text": "Reporting + next steps."
+      }
     ]
   },
-
   "contact": {
     "title": "Contact",
-    "subtitle": "Tell me about your context (stack, priority, timeline, constraints, etc.). I'll get back to you within 24h.",
+    "subtitle": "Describe your context (stack, priority, timeline, constraints). I'll reply within 24h.",
     "fields": {
-      "name": "Name / First name (or both)",
-      "namePlaceholder": "John COOLNAME",
+      "name": "Name",
+      "namePlaceholder": "John Doe",
       "mail": "Email",
-      "mailPlaceholder": "contact[at]company[dot]com",
+      "mailPlaceholder": "contact[at]company.com",
       "company": "Company (optional)",
-      "companyPlaceholder": "A great company",
+      "companyPlaceholder": "My great company",
       "message": "Message",
-      "messagePlaceholder": "You can copy / paste the message beside to be faster, but you won't be original anymore :/",
+      "messagePlaceholder": "You can copy the template on the left to go faster.",
       "cta": "Send"
     },
-    "mail": "Send me an email",
-    "formTitle": "This is where I get to know you!",
-    "copyMe": "Copy me!",
-    "copied": "Copied to clipboard!",
-    "template": "Message example",
-    "copy": "copy / paste"
+    "mail": "Email me",
+    "formTitle": "Tell me about your project",
+    "copyMe": "Copy template",
+    "copied": "Copied!",
+    "template": "Template",
+    "copy": "copy"
   },
-
   "footer": {
-    "availability": "Availability: evenings (and weekends if needed), remote-friendly",
+    "availability": "Available evenings and weekends - Remote",
     "rights": "All rights reserved.",
     "quickStart": {
-      "text": "To get started quickly: send me your stack, your priority (from scratch / features / bugs / performance) and desired format (10h/20h or sprint). Response within 24-48h."
+      "text": "To get started quickly: send me your stack, your priority (from scratch / features / bugs / performance) and desired format (10h/20h or sprint). Reply within 24-48h."
     }
   },
-
   "mail": {
     "subject": "Project request",
-    "body": "Hi Florentin,\n\nWe could use some help with:\n- Context: \n- Language(s) used: \n- Priority (bugs / performance / new feature / from scratch): \n- What you're looking for (10h / 20h / week / more ?): \n\nBest regards,\n"
+    "body": "Hi Florentin,\n\nWe could use some help with:\n- Context: \n- Language(s) used: \n- Priority (bugs / performance / new feature / from scratch): \n- What you're looking for (10h / 20h / per week / more?): \n\nBest regards,\n"
   }
 }
