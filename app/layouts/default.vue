@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-dvh flex flex-col bg-[#0a0a0f] text-white">
+  <div class="min-h-dvh flex flex-col bg-[#FAF8F5] text-[#1C1917]">
     <Header />
     <main class="flex-1">
       <slot />

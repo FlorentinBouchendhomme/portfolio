@@ -2,10 +2,37 @@
 
 @layer base {
   :root {
-    --font-sans: "DM Sans", system-ui, sans-serif;
-    --font-display: "Syne", system-ui, sans-serif;
-    --color-accent: #00ff88;
-    --color-bg: #0a0a0f;
+    --font-sans: "Instrument Sans", system-ui, sans-serif;
+    --font-display: "Instrument Serif", serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+    /* Background */
+    --color-cream: #faf8f5;
+    --color-cream-alt: #f3f0ea;
+    --color-dark: #1c1917;
+    --color-dark-2: #201a16;
+    --color-dark-3: #26211c;
+
+    /* Borders */
+    --color-border: #e9e5dd;
+    --color-border-2: #e2ded6;
+    --color-border-3: #ddd8ce;
+    --color-border-dark: #2e2822;
+    --color-border-dark-2: #38302a;
+    --color-border-dark-3: #4a403a;
+    --color-chip-border: #ebd5cc;
+
+    /* Muted */
+    --color-muted: #57534e;
+    --color-muted-2: #78716c;
+    --color-muted-3: #a8a29e;
+
+    /* Accents */
+    --color-accent: #a8442a;
+    --color-accent-light: #e8a87c;
+    --color-available: #3d9a5d;
+
+    --color-bg: var(--color-cream);
   }
 
   html {
@@ -17,8 +44,8 @@
   }
 
   ::selection {
-    background-color: #00ff8830;
-    color: #00ff88;
+    background-color: #a8442a30;
+    color: #a8442a;
   }
 
   :focus-visible {
@@ -34,11 +61,11 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: #ffffff15;
+    background: #1c191715;
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff25;
+    background: #1c191725;
   }
 }
 
