@@ -22,24 +22,30 @@
         class="hidden items-center gap-1 lg:flex"
         aria-label="Navigation principale"
       >
-        <a
-          v-for="(link, i) in navLinks"
-          :key="link.href"
-          :ref="
-            (el) => {
-              if (el) navRefs[i] = el as HTMLElement;
-            }
-          "
-          :href="link.href"
-          class="relative px-4 py-2 text-sm font-medium transition-colors duration-200"
-          :class="
-            activeSection === link.section
-              ? 'text-[#1C1917]'
-              : 'text-[#78716C] hover:text-[#1C1917]'
-          "
-          @click="setActive(link.section)"
-          >{{ link.label }}</a
-        >
+        <div class="relative flex items-center">
+          <a
+            v-for="(link, i) in navLinks"
+            :key="link.href"
+            :ref="
+              (el) => {
+                if (el) navRefs[i] = el as HTMLElement;
+              }
+            "
+            :href="link.href"
+            class="relative px-4 py-2 text-sm font-medium transition-colors duration-200"
+            :class="
+              activeSection === link.section
+                ? 'text-[#A8442A]'
+                : 'text-[#78716C] hover:text-[#1C1917]'
+            "
+            @click="setActive(link.section)"
+            >{{ link.label }}</a
+          >
+          <span
+            class="absolute bottom-0 h-0.5 bg-[#A8442A] transition-all duration-300 ease-out pointer-events-none"
+            :style="indicatorStyle"
+          ></span>
+        </div>
 
         <!-- Lang switcher -->
         <div
@@ -156,7 +162,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from "vue";
+import { ref, computed, watch, nextTick, onMounted, onBeforeUnmount } from "vue";
 
 const { locale, t } = useI18n();
 const isFR = computed(() => locale.value === "fr");
@@ -166,38 +172,70 @@ const isOpen = ref(false);
 const scrolled = ref(false);
 const activeSection = ref("top");
 const navRefs = ref<HTMLElement[]>([]);
+const navTick = ref(0);
 
 const navLinks = computed(() => [
   { href: "#offers", label: t("const.offers"), section: "offers" },
+  { href: "#process", label: t("const.process"), section: "process" },
   {
     href: "#realisations",
     label: t("const.projects"),
     section: "realisations",
   },
   { href: "#about", label: t("const.about"), section: "about" },
-  { href: "#process", label: t("const.process"), section: "process" },
   { href: "#faq", label: t("const.faq"), section: "faq" },
   { href: "#articles", label: t("const.articles"), section: "articles" },
 ]);
 
+const indicatorStyle = computed(() => {
+  navTick.value; // eslint-disable-line no-unused-expressions -- re-run on resize
+  const idx = navLinks.value.findIndex(
+    (l) => l.section === activeSection.value,
+  );
+  const el = navRefs.value[idx];
+  if (!el) return { width: "0px", left: "0px", opacity: "0" };
+  return {
+    width: `${el.offsetWidth}px`,
+    left: `${el.offsetLeft}px`,
+    opacity: "1",
+  };
+});
+
+// Reverse document order - used to find the deepest section already scrolled past.
+// "testimonials" has no nav link of its own (by design), so it's intentionally
+// omitted: while scrolled through it, this naturally falls through to "about",
+// the nearest preceding section that does have a link - no dead zone.
+const SCROLL_SPY_SECTIONS = [
+  "contact",
+  "articles",
+  "faq",
+  "about",
+  "realisations",
+  "process",
+  "offers",
+  "top",
+];
+
+let clickScrollTimer: ReturnType<typeof setTimeout> | null = null;
+const isClickScrolling = ref(false);
+
 function setActive(section: string) {
   activeSection.value = section;
   isOpen.value = false;
+  // Ignore scroll-spy updates while the smooth-scroll triggered by this click
+  // is still in flight, otherwise the indicator jitters through every
+  // in-between section instead of jumping straight to the target.
+  isClickScrolling.value = true;
+  if (clickScrollTimer) clearTimeout(clickScrollTimer);
+  clickScrollTimer = setTimeout(() => {
+    isClickScrolling.value = false;
+  }, 900);
 }
 
 function onScroll() {
   scrolled.value = window.scrollY > 20;
-  const sections = [
-    "contact",
-    "articles",
-    "faq",
-    "process",
-    "about",
-    "realisations",
-    "offers",
-    "top",
-  ];
-  for (const id of sections) {
+  if (isClickScrolling.value) return;
+  for (const id of SCROLL_SPY_SECTIONS) {
     const el = document.getElementById(id);
     if (el && window.scrollY >= el.offsetTop - 120) {
       activeSection.value = id;
@@ -210,12 +248,27 @@ function onKeydown(e: KeyboardEvent) {
   if (e.key === "Escape") isOpen.value = false;
 }
 
+function onResize() {
+  navTick.value++;
+}
+
+// Nav link widths change when the locale switches (different label lengths);
+// re-measure once the DOM has updated with the new text.
+watch(locale, () => {
+  nextTick(() => navTick.value++);
+});
+
 onMounted(() => {
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("keydown", onKeydown);
+  window.addEventListener("resize", onResize);
+  // Nav link widths depend on the loaded webfont; force a re-measure once ready.
+  document.fonts?.ready?.then(() => navTick.value++);
 });
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", onScroll);
   window.removeEventListener("keydown", onKeydown);
+  window.removeEventListener("resize", onResize);
+  if (clickScrollTimer) clearTimeout(clickScrollTimer);
 });
 </script>

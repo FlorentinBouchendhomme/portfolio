@@ -3,7 +3,7 @@
     class="bg-[#F3F0EA] border-t border-[#E9E5DD]"
     aria-labelledby="process-title"
   >
-    <div class="mx-auto max-w-6xl px-8 sm:px-16 py-16 sm:py-22">
+    <div v-reveal class="mx-auto max-w-6xl px-8 sm:px-16 py-16 sm:py-22">
       <div
         class="text-xs font-semibold uppercase tracking-widest text-[#A8442A] mb-3"
       >
@@ -21,7 +21,7 @@
         <div
           v-for="(s, i) in steps"
           :key="i"
-          class="border border-[#E2DED6] bg-white rounded-[14px] p-6 flex flex-col gap-3 transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(28,25,23,0.1)] hover:border-[#A8442A]/40"
+          class="border border-[#E2DED6] bg-white rounded-[14px] p-6 flex flex-col gap-3 transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(28,25,23,0.1)] hover:border-[#C9C2B4]"
         >
           <div class="font-display text-4xl text-[#A8442A]">
             {{ String(i + 1).padStart(2, "0") }}

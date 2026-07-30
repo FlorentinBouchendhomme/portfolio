@@ -3,8 +3,8 @@
     class="border p-7 flex flex-col gap-3 transition duration-200 hover:-translate-y-1"
     :class="
       highlighted
-        ? 'border-[#1C1917] bg-[#1C1917] text-[#FAF8F5] hover:shadow-[0_16px_40px_rgba(168,68,42,0.35)] hover:border-[#4A403A]'
-        : 'border-[#E2DED6] bg-white hover:shadow-[0_16px_40px_rgba(28,25,23,0.08)] hover:border-[#A8442A]/40'
+        ? 'border-[#1C1917] bg-[#1C1917] text-[#FAF8F5] hover:shadow-[0_16px_40px_rgba(168,68,42,0.35)] hover:border-[#A8442A]'
+        : 'border-[#E2DED6] bg-white hover:shadow-[0_16px_40px_rgba(28,25,23,0.08)] hover:border-[#C9C2B4]'
     "
     :aria-labelledby="titleId"
     :aria-describedby="subtitleId"

@@ -1,6 +1,5 @@
 {
   "const": {
-    "job": "Développeur fullstack",
     "offers": "Offres",
     "about": "À propos",
     "testimonies": "Témoignages",
@@ -74,7 +73,7 @@
     },
     "sprint": {
       "name": "Sprint stabilisation",
-      "for": "Production instable ou lente ? Aduit rapide, correctifs prioritaires, optimisations ciblées. 2 à 5 jours.",
+      "for": "Production instable ou lente ? Audit rapide, correctifs prioritaires, optimisations ciblées. 2 à 5 jours.",
       "price": "1 500€ - 4 000€"
     },
     "fromScratch": {
@@ -82,7 +81,6 @@
       "for": "Cadrage, setup, authentification, API, pages clés, tests, déploiement. Première version utilisable rapidement.",
       "price": "sur devis"
     },
-    "conditionsTitle": "Conditions",
     "conditions": [
       "Prix indicatifs HT.",
       "Les tarifs affichés n'incluent pas les coûts tiers (hébergement, licences, etc.).",

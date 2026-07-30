@@ -3,7 +3,7 @@
     class="bg-[#FAF8F5] border-t border-[#E9E5DD]"
     aria-labelledby="testimonials-title"
   >
-    <div class="mx-auto max-w-6xl px-8 sm:px-16 py-16 sm:py-22">
+    <div v-reveal class="mx-auto max-w-6xl px-8 sm:px-16 py-16 sm:py-22">
       <div
         class="text-xs font-semibold uppercase tracking-widest text-[#A8442A] mb-3"
       >

@@ -4,6 +4,7 @@
     aria-labelledby="about-title"
   >
     <div
+      v-reveal
       class="mx-auto max-w-6xl px-8 sm:px-16 py-16 sm:py-22 grid gap-12 lg:grid-cols-2 items-start"
     >
       <div>
