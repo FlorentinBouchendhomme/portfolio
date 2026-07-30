@@ -1,281 +1,209 @@
 {
   "const": {
     "job": "Développeur fullstack",
-    "jobDescription": "Symfony côté back, et front moderne (Nuxt / Next, Vue / React). Je construis des applications de zéro, j'ajoute des fonctionnalités, et je stabilise/optimise des produits existants.",
-    "home": "Accueil",
     "offers": "Offres",
-    "about": "Parcours",
-    "testimonies": "Réalisations",
+    "about": "À propos",
+    "testimonies": "Témoignages",
+    "projects": "Réalisations",
+    "process": "Processus",
+    "faq": "FAQ",
+    "articles": "Articles",
     "contact": "Contact",
-    "cta": "Me contacter",
-    "portfolioVersion": "florentin-portfolio v1.0.0",
+    "cta": "Discutons",
     "menu": "Menu"
   },
   "hero": {
-    "badge": "Disponible - Remote",
-    "headline1": "Je renforce",
-    "headline2": "vos équipes",
-    "headline3": "le soir & le week-end.",
-    "kicker": "Symfony - Nuxt / Next - Vue / React - Python",
-    "title": "Je renforce vos équipes le soir et le week-end.",
-    "subtitle": "Développeur fullstack disponible en freelance. J'intègre vos projets existants ou construis de zéro — avec des PR propres, une communication claire et des livraisons régulières.",
-    "primaryCta": "Discutons ensemble",
-    "secondaryCta": "Voir les offres",
-    "bullets": [
-      {
-        "label": "Application de zéro : API, back-office, front moderne",
-        "explanation": "API = la partie serveur qui expose vos données.\nBack-office = interface d'administration.\nFront = l'interface côté utilisateur."
-      },
-      {
-        "label": "Nouvelles fonctionnalités : découpage intelligent, livraison rapide",
-        "explanation": "Découpage en petites fonctions.\nLivraison de ces fonctionnalités testables.\nValidation au fur et à mesure."
-      },
-      {
-        "label": "Bugs & performance : stabilisation en production + optimisations ciblées",
-        "explanation": "Analyse des logs si existant.\nCorrection d'erreurs et optimisation des requêtes.\nMise en cache si besoin.\nRéduction de dette technique (documentation manquante, code obsolète, etc.)"
-      }
-    ],
-    "rightCard": {
-      "items": [
-        {
-          "title": "Forfait 10h / mois",
-          "value": "À partir de 900€ / mois",
-          "explanation": "Idéal si vous souhaitez un renfort régulier pour de la maintenance, de petites évolutions ou de la stabilisation."
-        },
-        {
-          "title": "Stabilisation & performance",
-          "value": "1 500€ à 4 000€ (2-5 jours)",
-          "explanation": "Quand la prod est lente ou instable : audit express, correctifs prioritaires, optimisations ciblées, puis un plan d'amélioration. Durée selon le périmètre."
-        },
-        {
-          "title": "Application sur-mesure",
-          "value": "Sur devis",
-          "explanation": "Pour un MVP ou une application complète : je cadre le scope et je propose un plan de livraison."
-        }
-      ]
-    }
+    "badge": "Disponible - Remote, soir et week-end",
+    "title": "Le renfort fullstack que vos équipes méritent.",
+    "subtitle": "Développeur fullstack disponible en freelance et spécialisé en Symfony, Nuxt et Vue. J'intègre vos projets existants ou je construis de zéro - PR propres, communication claire et livraisons régulières.",
+    "primaryCta": "Discutons de votre projet",
+    "secondaryCta": "Voir les offres"
   },
   "terminal": {
-    "arrow": "=>",
+    "hint": "cliquez pour écrire",
+    "modeInteractive": "mode interactif - tapez help",
+    "typeHelpHint": "tapez help pour explorer",
+    "helpStack": "technologies maîtrisées",
+    "helpOffers": "formats & tarifs",
+    "helpDispo": "disponibilités",
     "helpTitle": "Commandes disponibles :",
-    "helpWhoami": "— qui suis-je ?",
-    "helpSkills": "— stack technique",
-    "helpProjects": "— mes projets",
-    "helpContact": "— me contacter",
-    "helpAvailability": "— disponibilité",
-    "helpEcho": "— afficher un texte",
-    "helpClear": "— effacer le terminal",
-    "helpHidden": "... et d'autres commandes cachées",
-    "whoamiName": "Florentin Bouchend'homme",
-    "skillsTitle": "Stack technique :",
-    "projectsWip": "Projets en cours :",
-    "projectsDone": "Réalisations clients :",
-    "availability": "disponible",
-    "status": "Statut",
-    "projectDracula": {
-      "title": "Dracula vs Van Helsing",
-      "description": "jeu multijoueur (Next/Nuxt/Sockets)"
-    },
-    "projectWordgrid": {
-      "title": "Mots fléchés",
-      "description": "générateur & solveur (Python)"
-    },
-    "contactTitle": "Me contacter :",
-    "contactForm": "Formulaire en bas de page",
-    "contactEmail": "Ou directement par email",
+    "helpProjects": "réalisations récentes",
+    "helpContact": "me joindre",
+    "helpClear": "effacer le terminal",
+    "stackBack": "back",
+    "stackFront": "front",
+    "stackData": "data",
+    "stackOps": "ops",
+    "dispoLine": "✓ soirs 19h-23h ✓ week-ends ✓ remote",
+    "projectsSideLabel": "Side : mots croisés (Python) / jeu de société en ligne",
     "contactDelay": "Réponse sous 24h en semaine.",
-    "availTitle": "Disponibilité :",
-    "availFormat": "Format   => Remote uniquement",
-    "availLanguages": "Langues  => Français - English",
-    "bootWelcome": "Bienvenue. Tapez help pour commencer.",
-    "skillsBackend": "Back-end",
-    "skillsFrontend": "Front-end",
-    "skillsDb": "Base de données",
-    "skillsTools": "Outils",
-    "echo": {
-      "usage": "usage",
-      "arg": "votre texte"
-    },
-    "food": {
-      "1": "Carbonnade flamande",
-      "2": "Riz chipo",
-      "3": "Sushi"
-    },
-    "welcome": "Bienvenue",
     "write": "Tapez",
     "toStart": "pour commencer",
     "stop": "clear pour arrêter",
-    "enter": "entré",
-    "placeholder": "essayez : help",
-    "commandList": "pour la liste des commandes",
     "unknownCommand": "Commande inconnue"
   },
   "about": {
-    "title": "Parcours",
-    "intro": "Double master en gestion de projet et développement fullstack. Plusieurs années en CDI sur des projets Symfony / Vue, avec une réelle appétence pour les interfaces modernes et les architectures propres.",
-    "education": [
-      {
-        "year": "2023-2025",
-        "label": "Double master",
-        "detail": "Gestion de projet & Développeur fullstack"
-      },
-      {
-        "year": "2022-2023",
-        "label": "Licence",
-        "detail": "Développeur et concepteur d'applications"
-      },
-      {
-        "year": "2020-2022",
-        "label": "IUT Informatique",
-        "detail": "Développeur web"
-      }
+    "heading": "La personne derrière le code.",
+    "bio": [
+      "Bac+5, titulaire d'un double master en gestion de projet et en développement fullstack, je code par passion depuis 2013 toute sorte de chose (jeu, domotique, applications web), bien avant d'en avoir fait un métier. Aujourd'hui développeur fullstack au sein d'une entreprise de recrutement.",
+      "Un poste, ça structure. Le freelance permet de toucher à d'autres problèmes, d'autres équipes, et de construire tranquillement mon activité, à mon rythme."
     ],
-    "certifications": [
-      {
-        "label": "TOEIC - 2024",
-        "detail": "Anglais professionnel (945/990)"
-      }
-    ],
-    "stack": {
-      "title": "Stack",
-      "categories": [
-        {
-          "label": "Back-end",
-          "items": "Symfony - Python"
-        },
-        {
-          "label": "Front-end",
-          "items": "Vue - Nuxt - React - Next.js - TypeScript"
-        },
-        {
-          "label": "Base de données",
-          "items": "PostgreSQL - MySQL"
-        },
-        {
-          "label": "Outils",
-          "items": "Git - Docker - CI/CD"
-        }
-      ]
-    },
-    "hexTitle": "Stack technique",
-    "hexHint": "Cliquez ou survolez pour explorer",
-    "tagline": "Remote - Bilingue FR/EN - Soir & week-end",
-    "paragraphs": [
-      "Développeur fullstack avec plusieurs années d'expérience en CDI, je travaille principalement sur des stacks Symfony / Nuxt. Je suis bilingue français / anglais, ce qui me permet de collaborer aussi bien avec des équipes francophones qu'anglophones.",
-      "Je suis disponible en soirée et le week-end pour des missions freelance en remote. Mon fonctionnement : je m'intègre proprement dans votre workflow existant (Git, PR, reviews), sans friction."
+    "locationTag": "Calvados (14) / Normandie",
+    "statusTag": "Fullstack en poste, entreprise de recrutement",
+    "stats": [
+      { "value": "6 ans", "label": "d'expérience professionnelle" },
+      { "value": "3", "label": "projets pro livrés" },
+      { "value": "3", "label": "projets perso terminés" }
     ]
   },
   "offers": {
-    "title": "Offres",
-    "subtitle": "Des formats simples, adaptés à une collaboration efficace : périmètre cadré, communication claire, livraison régulière.",
-    "disclaimer": "Chaque projet est différent.\nUn appel vaut mieux que mille messages ! On clarifie le contexte et la zone d'impact, puis je vous confirme un tarif adapté à la complexité, aux délais et au niveau d'urgence.",
-    "includedLabel": "Inclus",
-    "notIncludedLabel": "Non inclus",
-    "ctaLabel": "Contactez-moi",
-    "priceLabel": "Prix",
+    "title": "Des formats simples, un périmètre cadré",
+    "subtitle": "Communication claire, livraison régulière. Choisissez le format qui correspond à votre besoin.",
+    "popularLabel": "Populaire",
     "retainer10": {
-      "name": "Forfait mensuel 10h",
-      "for": "Idéal pour de la maintenance, de petites évolutions et de la stabilisation continue.",
-      "includes": [
-        "Priorisation + mini backlog",
-        "Corrections de bugs et petites fonctionnalités",
-        "Pull requests, revues et suivi",
-        "Point rapide + mini reporting"
-      ],
-      "excludes": ["Astreinte / urgence 24/7", "Support illimité hors scope"],
-      "price": "À partir de 900€ / mois"
+      "name": "Forfait 10h / mois",
+      "for": "Maintenance, corrections de bugs, petites évolutions, stabilisation continue. Mini backlog + reporting.",
+      "price": "dès 900€",
+      "subPrice": "/ mois"
     },
     "retainer20": {
-      "name": "Forfait mensuel 20h",
-      "for": "Idéal pour livrer des fonctionnalités en continu et réduire la dette technique.",
-      "includes": [
-        "Roadmap court terme + backlog cadré",
-        "Développement de fonctionnalités",
-        "Stabilisation + refactorisation ciblée",
-        "Tests/CI si nécessaire"
-      ],
-      "excludes": ["Astreinte / urgence 24/7", "Reprise totale sans cadrage"],
-      "price": "À partir de 1 600€ / mois"
+      "name": "Forfait 20h / mois",
+      "for": "Fonctionnalités livrées en continu, réduction de la dette technique, tests / CI si nécessaire.",
+      "price": "dès 1 600€",
+      "subPrice": "/ mois"
     },
     "sprint": {
-      "name": "Stabilisation & performance (2 à 5 jours)",
-      "for": "Quand la production est instable, lente, ou que des erreurs coûtent cher.",
-      "includes": [
-        "Audit rapide (logs, performance, points de friction)",
-        "Correctifs prioritaires",
-        "Optimisations ciblées (base de données, cache, front)",
-        "Rapport + backlog d'améliorations"
-      ],
-      "price": "1 500€ à 4 000€ selon le périmètre"
+      "name": "Sprint stabilisation",
+      "for": "Production instable ou lente ? Aduit rapide, correctifs prioritaires, optimisations ciblées. 2 à 5 jours.",
+      "price": "1 500€ - 4 000€"
     },
     "fromScratch": {
-      "name": "Créer de zéro / MVP",
-      "for": "Conception et livraison d'une première version utilisable rapidement.",
-      "includes": [
-        "Cadrage fonctionnel (MVP) + plan technique",
-        "Setup du projet, authentification, API, pages clés",
-        "Environnements et tests",
-        "Déploiement + documentation courte",
-        "Application clefs en main"
-      ],
-      "price": "Sur devis"
+      "name": "MVP de zéro",
+      "for": "Cadrage, setup, authentification, API, pages clés, tests, déploiement. Première version utilisable rapidement.",
+      "price": "sur devis"
     },
     "conditionsTitle": "Conditions",
     "conditions": [
-      "Prix indicatifs (HT).",
+      "Prix indicatifs HT.",
       "Les tarifs affichés n'incluent pas les coûts tiers (hébergement, licences, etc.).",
       "Urgence possible, sous réserve d'ajustement des tarifs.",
       "Toute demande supplémentaire fera l'objet d'un nouveau devis."
     ]
   },
-  "proof": {
-    "title": "Réalisations",
-    "subtitle": "Deux projets concrets, réalisés en conditions réelles.",
-    "labels": {
-      "context": "Contexte",
-      "problem": "Problème",
-      "actions": "Actions",
-      "result": "Résultat"
+  "projects": {
+    "title": "Des projets concrets, en production.",
+    "caseStudyCta": "Voir l'étude de cas +",
+    "visitCta": "Visiter",
+    "resultLabel": "Résultat :",
+    "similarProjectCta": "Un projet similaire ? Parlons-en !",
+    "items": {
+      "opporta": {
+        "tags": ["Symfony", "Vue-Vuex-Nuxt", "MySQL", "Redis"],
+        "title": "Opporta - plateforme emploi des GEIQ",
+        "description": "Rapprocher candidats et entreprises adhérentes des GEIQ : la plateforme centralise offres d'emploi, évènements de recrutement et formations qualifiantes. Identité visuelle conçue en binôme avec une graphiste externe.",
+        "points": [
+          "API Symfony, front Vue (Vuex et Nuxt), base MySQL",
+          "Dépôt de candidature en un clic, spontanée ou sur offre",
+          "Évènements de recrutement et formations qualifiantes",
+          "Back-office : les équipes publient offres et évènements en autonomie"
+        ],
+        "result": "plateforme en production, contenus publiés en continu par les équipes.",
+        "site": "https://opporta.fr",
+        "siteLabel": "opporta"
+      },
+      "lda": {
+        "tags": ["WordPress", "Thème sur-mesure", "SEO"],
+        "title": "L'Agence d'Architecture - vitrine LDA / LDI",
+        "description": "Site daté, peu lisible sur mobile et invisible sur Google. Refonte complète en binôme avec une graphiste externe.",
+        "points": [
+          "Thème WordPress sur-mesure, fidèle à la direction artistique",
+          "Responsive, mise en valeur des projets d'architecture",
+          "Optimisation SEO",
+          "Formation de l'équipe pour une maintenance en autonomie"
+        ],
+        "result": "site moderne, rapide, bien référencé - livré dans les délais convenus.",
+        "site": "https://lagencedarchitecture.com",
+        "siteLabel": "lagencedarchitecture"
+      },
+      "mob": {
+        "tags": ["Nuxt", "Symfony", "MySQL", "Réservation", "OpenStreetMap"],
+        "title": "La Mob à Papa - mobylothérapie en Artois",
+        "description": "Location de mobylettes anciennes, tandems et vélos d'époque pour sillonner l'Artois - un site chaleureux fidèle à l'esprit du garage.",
+        "points": [
+          "Front Nuxt, API Symfony, base MySQL",
+          "Galerie, parcours et tarifs",
+          "Réservation de balades en ligne",
+          "Système de navigation propre aux parcours créés",
+          "Identité rétro assumée, du logo aux textes"
+        ],
+        "result": "en ligne, réservation directe des balades.",
+        "site": "https://lamobapapa.fr",
+        "siteLabel": "lamobapapa"
+      }
     },
+    "side": {
+      "note": "à côté, pour le plaisir de coder - bientôt jouables directement ici",
+      "label": "side project",
+      "wordgrid": {
+        "title": "Générateur de mots croisés & fléchés",
+        "description": "Génération algorithmique de grilles complètes et valides - placement des mots, croisements, définitions."
+      },
+      "boardgame": {
+        "title": "Jeu de société porté en ligne",
+        "description": "Portage d'un jeu de plateau en version web multijoueur - règles, parties en ligne, temps réel."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Ils ont travaillé avec moi.",
+    "items": ["témoignage client à insérer", "témoignage client à insérer"],
+    "attribution": "Nom, rôle, société"
+  },
+  "faq": {
+    "title": "Les questions qu'on me pose.",
     "items": [
       {
-        "title": "Migration d'un outil interne legacy vers Symfony / Vue",
-        "context": "Outil interne en PHP natif, non maintenu, sans structure claire.",
-        "problem": "Code impossible à faire évoluer, zéro séparation des responsabilités, pas de tests, risques de sécurité.",
-        "actions": "Réécriture complète from scratch : API Symfony, front Vue, mise en place d'une architecture propre, authentification, déploiement.",
-        "result": "Outil pleinement opérationnel, équipe capable de faire évoluer la base sans friction, dette technique soldée."
+        "q": "Freelance en soirée et week-end, c'est fiable ?",
+        "a": "Oui, parce que le cadre est clair dès le départ : créneaux définis (soirs 19h-23h, week-ends), engagements réalistes en heures, communication asynchrone qui ne bloque jamais votre équipe. Vous jugez sur les livraisons - PR propres et régulières."
       },
       {
-        "title": "Site vitrine WordPress — Agence d'architecture",
-        "context": "Agence souhaitant refondre son site vitrine pour mieux présenter ses projets.",
-        "problem": "Site existant daté, mal structuré, peu lisible sur mobile, aucune optimisation SEO.",
-        "actions": "En collaboration avec une graphiste, développement d'un thème WordPress sur-mesure : design moderne, structure claire, responsive, optimisation SEO, et formation de l'équipe pour la maintenance.",
-        "result": "Site moderne, rapide, bien référencé — livré dans les délais convenus."
+        "q": "Comment se passe la facturation ?",
+        "a": "Devis signé avant tout démarrage. Facturation mensuelle pour les forfaits, au jalon pour les sprints et MVP. Prix HT, pas de coûts cachés - les services tiers (hébergement, licences) restent à votre nom et sous votre contrôle."
       },
       {
-        "title": "Portfolio",
-        "context": "Besoin d'un portfolio clair et professionnel pour présenter mes offres et réalisations.",
-        "problem": "Absence de portfolio, difficulté à présenter mes compétences et expériences de manière structurée.",
-        "actions": "Conception et développement d'un portfolio moderne en Nuxt, avec une navigation fluide, une présentation claire de mes offres, et une section dédiée à mes réalisations.",
-        "result": "Portfolio professionnel, facile à naviguer, qui met en valeur mes compétences et expériences de manière efficace."
+        "q": "Et si le besoin dépasse le forfait ?",
+        "a": "On le voit venir ensemble : suivi des heures partagé et transparent. Tout ce qui sort du périmètre fait l'objet d'un devis séparé avant d'être engagé - jamais de surprise sur la facture."
+      },
+      {
+        "q": "À qui appartient le code ? Un NDA est-il possible ?",
+        "a": "Le code vous appartient intégralement dès paiement : livré sur vos dépôts Git, documenté, sans dépendance à ma personne. NDA et clause de confidentialité possibles sans difficulté."
+      },
+      {
+        "q": "Vous reprenez l'existant ou seulement du neuf ?",
+        "a": "Les deux - et j'aime particulièrement les codebases existantes : reprise de legacy, stabilisation et migration progressive sont mon quotidien. Aucun jugement sur l'état du code, on part de là où vous êtes."
+      }
+    ]
+  },
+  "articles": {
+    "title": "Notes techniques.",
+    "comingSoon": "à venir",
+    "items": [
+      {
+        "title": "Migrer un legacy PHP vers Symfony sans tout casser",
+        "description": "Stratégie de réécriture progressive, retour d'expérience."
+      },
+      {
+        "title": "Checklist performance pour une app Symfony en production",
+        "description": "Base de données, cache, profiling : les gains rapides."
+      },
+      {
+        "title": "Freelance le soir : comment je m'intègre à une équipe sans friction",
+        "description": "Git, PR, reviews, communication asynchrone."
       }
     ]
   },
   "process": {
-    "title": "Processus",
-    "subtitle": "Une méthode simple : cadrer vite, livrer propre, garder de la visibilité.",
-    "durationBadge": "2 à 5 jours (selon périmètre)",
-    "aria": {
-      "stepWord": "Étape",
-      "scrollerLabel": "Défilement horizontal du processus"
-    },
-    "cards": {
-      "whatYouGetTitle": "Ce que vous avez",
-      "whatYouGetText": "Un scope clair, des PR propres, et un résumé court.",
-      "outputTitle": "Sortie",
-      "outputText": "Améliorations livrées + backlog des prochaines étapes."
-    },
-    "hint": "Scroll pour naviguer - Snap activé",
+    "title": "Cadrer vite, livrer propre",
     "steps": [
       {
         "title": "Appel",
@@ -287,48 +215,37 @@
       },
       {
         "title": "Proposition",
-        "text": "Format (forfait/sprint), budget, plan d'exécution."
+        "text": "Format, budget, plan d'exécution."
       },
       {
         "title": "Livraison",
-        "text": "PRs propres, points réguliers, transparence."
+        "text": "PR propres, points réguliers, transparence."
       },
       {
         "title": "Suivi",
-        "text": "Reporting + prochaines étapes."
+        "text": "Reporting + backlog des prochaines étapes."
       }
     ]
   },
   "contact": {
-    "title": "Contact",
     "subtitle": "Décrivez-moi votre contexte (stack, priorité, délai, contraintes). Je réponds sous 24h.",
     "fields": {
       "name": "Nom / Prénom",
-      "namePlaceholder": "Paul Dupont",
       "mail": "Email",
-      "mailPlaceholder": "contact[at]entreprise.fr",
       "company": "Société (optionnel)",
-      "companyPlaceholder": "Ma belle entreprise",
-      "message": "Message",
-      "messagePlaceholder": "Vous pouvez copier le template à gauche pour aller plus vite.",
+      "message": "Votre message (contexte, stack, priorité, délai, etc.)",
       "cta": "Envoyer"
     },
-    "mail": "M'envoyer un email",
+    "mailHint": "Le bouton ouvre votre client mail avec le message pré-rempli.",
     "formTitle": "Parlez-moi de votre projet",
     "copyMe": "Copier le template",
-    "copied": "Copié !",
-    "template": "Template",
-    "copy": "copier"
+    "copied": "Copié !"
   },
   "footer": {
-    "availability": "Disponible en soirée et week-end - Remote",
-    "rights": "Tous droits réservés.",
-    "quickStart": {
-      "text": "Pour démarrer rapidement : envoyez-moi votre stack, votre priorité (de zéro / fonctionnalités / bugs / performance) et le format souhaité (10h/20h ou sprint). Réponse sous 24-48h."
-    }
+    "rights": "Tous droits réservés."
   },
   "mail": {
     "subject": "Demande de projet",
-    "body": "Bonjour Florentin,\n\nNous aurions besoin d'un coup de main avec :\n- Contexte : \n- Language(s) utilisé(s) : \n- Priorité (bugs / performance / nouveauté / de zéro) : \n- Ce que vous souhaitez (10h / 20h / semaine / plus ?) : \n\nCordialement,\n"
+    "body": "Bonjour Florentin,\n\nNous aurions besoin d'un coup de main avec :\n- Contexte : \n- Language(s) utilisé(s) : \n- Priorité (bugs / performance / nouveauté / de zéro) : \n- Format souhaité (10h / 20h / sprint / MVP) : \n\nCordialement,\n"
   }
 }
