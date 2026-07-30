@@ -1,6 +1,7 @@
 <template>
   <section class="bg-[#1C1917]">
     <div
+      v-reveal
       class="mx-auto max-w-6xl px-8 sm:px-16 py-16 sm:py-24 grid gap-12 lg:grid-cols-2"
     >
       <div class="flex flex-col gap-6">

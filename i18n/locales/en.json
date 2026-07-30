@@ -1,269 +1,207 @@
 {
   "const": {
-    "job": "Full-stack developer",
-    "jobDescription": "Symfony on the back-end, modern front-end (Nuxt / Next, Vue / React). I build applications from scratch, add features, and stabilize/optimize existing products.",
-    "home": "Home",
     "offers": "Offers",
-    "about": "Background",
-    "testimonies": "Projects",
+    "about": "About",
+    "testimonies": "Testimonials",
+    "projects": "Work",
+    "process": "Process",
+    "faq": "FAQ",
+    "articles": "Articles",
     "contact": "Contact",
-    "cta": "Get in touch",
-    "portfolioVersion": "florentin-portfolio v1.0.0",
+    "cta": "Let's talk",
     "menu": "Menu"
   },
   "hero": {
-    "badge": "Available - Remote",
-    "headline1": "I strengthen",
-    "headline2": "your teams",
-    "headline3": "evenings & weekends.",
-    "kicker": "Symfony - Nuxt / Next - Vue / React - Python",
-    "title": "I strengthen your teams evenings and weekends.",
-    "subtitle": "Full-stack developer available for freelance work. I integrate into your existing projects or build from scratch — with clean PRs, clear communication, and regular deliveries.",
-    "primaryCta": "Let's talk",
-    "secondaryCta": "View offers",
-    "bullets": [
-      {
-        "label": "Build from scratch: API, back-office, modern front-end",
-        "explanation": "API = the server-side that exposes your data.\nBack-office = admin interface.\nFront = user-facing interface."
-      },
-      {
-        "label": "New features: smart breakdown, fast delivery",
-        "explanation": "Breakdown into small functions.\nDelivery of testable features.\nValidation as we go."
-      },
-      {
-        "label": "Bugs & performance: production stabilization + targeted optimizations",
-        "explanation": "Log analysis if existing.\nError fixes and query optimization.\nCaching if needed.\nTechnical debt reduction (missing docs, obsolete code, etc.)"
-      }
-    ],
-    "rightCard": {
-      "items": [
-        {
-          "title": "10h / month package",
-          "value": "Starting from €900 / month",
-          "explanation": "Ideal if you want regular support for maintenance, small changes, or stabilization."
-        },
-        {
-          "title": "Stabilization & performance",
-          "value": "€1,500 to €4,000 (2-5 days)",
-          "explanation": "When production is slow or unstable: express audit, priority fixes, targeted optimizations, then an improvement plan. Duration depends on scope."
-        },
-        {
-          "title": "Custom application",
-          "value": "Custom quote",
-          "explanation": "For an MVP or complete application: I scope it and propose a delivery plan."
-        }
-      ]
-    }
+    "badge": "Available - Remote, evenings and weekends",
+    "title": "The fullstack backup your team deserves.",
+    "subtitle": "Full-stack developer available for freelance work, specialized in Symfony, Nuxt and Vue. I integrate into your existing projects or build from scratch - clean PRs, clear communication, regular deliveries.",
+    "primaryCta": "Let's talk about your project",
+    "secondaryCta": "View offers"
   },
   "terminal": {
-    "arrow": "=>",
+    "hint": "click to type",
+    "modeInteractive": "interactive mode - type help",
+    "typeHelpHint": "type help to explore",
+    "helpStack": "tech stack",
+    "helpOffers": "formats & rates",
+    "helpDispo": "availability",
     "helpTitle": "Available commands:",
-    "helpWhoami": "— who am I?",
-    "helpSkills": "— tech stack",
-    "helpProjects": "— my projects",
-    "helpContact": "— contact me",
-    "helpAvailability": "— availability",
-    "helpEcho": "— display text",
-    "helpClear": "— clear terminal",
-    "helpHidden": "... and other hidden commands",
-    "whoamiName": "Florentin Bouchend'homme",
-    "skillsTitle": "Tech stack:",
-    "projectsWip": "Work in progress:",
-    "projectsDone": "Client projects:",
-    "status": "Status",
-    "availability": "available",
-    "projectDracula": {
-      "title": "Dracula vs Van Helsing",
-      "description": "multiplayer game (Next/Nuxt/Sockets)"
-    },
-    "projectWordgrid": {
-      "title": "Crossword grids",
-      "description": "generator & solver (Python)"
-    },
-    "contactTitle": "Contact me:",
-    "contactForm": "Form at bottom of page",
-    "contactEmail": "Or email directly",
+    "helpProjects": "recent work",
+    "helpContact": "get in touch",
+    "helpClear": "clear the terminal",
+    "stackBack": "back",
+    "stackFront": "front",
+    "stackData": "data",
+    "stackOps": "ops",
+    "dispoLine": "✓ evenings 7-11pm ✓ weekends ✓ remote",
+    "projectsSideLabel": "Side : crossword generator (Python) / online board game",
     "contactDelay": "Response within 24h on weekdays.",
-    "availTitle": "Availability:",
-    "availFormat": "Format   => Remote only",
-    "availLanguages": "Languages => French - English",
-    "bootWelcome": "Welcome. Type help to get started.",
-    "skillsBackend": "Back-end",
-    "skillsFrontend": "Front-end",
-    "skillsDb": "Database",
-    "skillsTools": "Tools",
-    "echo": {
-      "usage": "usage",
-      "arg": "your text"
-    },
-    "food": {
-      "1": "Carbonnade flamande",
-      "2": "Chipo rice",
-      "3": "Sushi"
-    },
-    "welcome": "Welcome",
     "write": "Type",
     "toStart": "to get started",
     "stop": "clear to stop",
-    "enter": "enter",
-    "placeholder": "try: help",
-    "commandList": "for the command list",
     "unknownCommand": "Unknown command"
   },
   "about": {
-    "title": "Background",
-    "intro": "Double master's in project management and full-stack development. Several years in permanent roles on Symfony / Vue projects, with real passion for modern interfaces and clean architectures.",
-    "education": [
-      {
-        "year": "2020-2022",
-        "label": "Double master's",
-        "detail": "Project Management - Full-stack Development"
-      }
+    "heading": "The person behind the code.",
+    "bio": [
+      "Master's degree holder with a double major in project management and full-stack development, I've been coding out of passion since 2013 - games, home automation, web apps - well before making it my job. Today I'm a full-stack developer at a recruitment company.",
+      "A permanent role brings structure. Freelancing lets me touch other problems, other teams, and steadily build my own activity, at my own pace."
     ],
-    "certifications": [
-      {
-        "label": "TOEIC",
-        "detail": "Professional English — C1 level"
-      }
-    ],
-    "stack": {
-      "title": "Stack",
-      "categories": [
-        {
-          "label": "Back-end",
-          "items": "Symfony - Python"
-        },
-        {
-          "label": "Front-end",
-          "items": "Vue - Nuxt - React - Next.js - TypeScript"
-        },
-        {
-          "label": "Database",
-          "items": "PostgreSQL - MySQL"
-        },
-        {
-          "label": "Tools",
-          "items": "Git - Docker - CI/CD"
-        }
-      ]
-    },
-    "tagline": "Remote - Bilingual FR/EN - Evenings & weekends",
-    "paragraphs": [
-      "Full-stack developer with several years of permanent role experience, I work primarily on Symfony / Nuxt stacks. I'm bilingual French / English, which allows me to collaborate with both French-speaking and English-speaking teams.",
-      "I'm available evenings and weekends for freelance remote projects. My approach: I integrate smoothly into your existing workflow (Git, PRs, reviews), without friction."
+    "locationTag": "Calvados (14) / Normandy, France",
+    "statusTag": "Full-stack employee, recruitment company",
+    "stats": [
+      { "value": "6 yrs", "label": "of professional experience" },
+      { "value": "3", "label": "client projects delivered" },
+      { "value": "3", "label": "personal projects completed" }
     ]
   },
   "offers": {
-    "title": "Offers",
-    "subtitle": "Simple formats, adapted for efficient collaboration: clear scope, transparent communication, regular delivery.",
-    "disclaimer": "Every project is different.\nA call is worth a thousand messages! We clarify the context and impact area, then I confirm a rate adapted to complexity, timeline, and urgency.",
-    "includedLabel": "Included",
-    "notIncludedLabel": "Not included",
-    "ctaLabel": "Contact me",
-    "priceLabel": "Price",
+    "title": "Simple formats, a clear scope",
+    "subtitle": "Clear communication, regular delivery. Pick the format that fits your need.",
+    "popularLabel": "Popular",
     "retainer10": {
-      "name": "10h monthly package",
-      "for": "Ideal for maintenance, small changes, and continuous stabilization.",
-      "includes": [
-        "Prioritization + mini backlog",
-        "Bug fixes and small features",
-        "Pull requests, reviews, and tracking",
-        "Quick sync + mini reporting"
-      ],
-      "excludes": ["24/7 on-call / emergency", "Unlimited support outside scope"],
-      "price": "Starting from €900 / month"
+      "name": "10h / month package",
+      "for": "Maintenance, bug fixes, small changes, continuous stabilization. Mini backlog + reporting.",
+      "price": "from €900",
+      "subPrice": "/ month"
     },
     "retainer20": {
-      "name": "20h monthly package",
-      "for": "Ideal for continuous feature delivery and technical debt reduction.",
-      "includes": [
-        "Short-term roadmap + scoped backlog",
-        "Feature development",
-        "Stabilization + targeted refactoring",
-        "Tests/CI if needed"
-      ],
-      "excludes": ["24/7 on-call / emergency", "Complete overhaul without scoping"],
-      "price": "Starting from €1,600 / month"
+      "name": "20h / month package",
+      "for": "Features delivered continuously, technical debt reduction, tests / CI if needed.",
+      "price": "from €1,600",
+      "subPrice": "/ month"
     },
     "sprint": {
-      "name": "Stabilization & performance (2 to 5 days)",
-      "for": "When production is unstable, slow, or errors are costly.",
-      "includes": [
-        "Quick audit (logs, performance, friction points)",
-        "Priority fixes",
-        "Targeted optimizations (database, cache, front-end)",
-        "Report + improvement backlog"
-      ],
-      "price": "€1,500 to €4,000 depending on scope"
+      "name": "Stabilization sprint",
+      "for": "Production unstable or slow? Quick audit, priority fixes, targeted optimizations. 2 to 5 days.",
+      "price": "€1,500 - €4,000"
     },
     "fromScratch": {
-      "name": "Build from scratch / MVP",
-      "for": "Design and delivery of a first usable version, fast.",
-      "includes": [
-        "Functional scoping (MVP) + technical plan",
-        "Project setup, authentication, API, key pages",
-        "Environments and tests",
-        "Deployment + short documentation",
-        "Turnkey application"
-      ],
-      "price": "Custom quote"
+      "name": "MVP from scratch",
+      "for": "Scoping, setup, authentication, API, key pages, tests, deployment. A usable first version, fast.",
+      "price": "custom quote"
     },
-    "conditionsTitle": "Conditions",
     "conditions": [
-      "Indicative prices (excl. VAT).",
+      "Indicative prices, excl. VAT.",
       "Displayed rates do not include third-party costs (hosting, licenses, etc.).",
       "Urgent requests possible, subject to rate adjustment.",
       "Any additional request will be subject to a new quote."
     ]
   },
-  "proof": {
-    "title": "Projects",
-    "subtitle": "Two concrete projects, delivered in real conditions.",
-    "labels": {
-      "context": "Context",
-      "problem": "Problem",
-      "actions": "Actions",
-      "result": "Result"
+  "projects": {
+    "title": "Real projects, in production.",
+    "caseStudyCta": "View case study +",
+    "visitCta": "Visit",
+    "resultLabel": "Result:",
+    "similarProjectCta": "A similar project in mind? Let's talk!",
+    "items": {
+      "opporta": {
+        "tags": ["Symfony", "Vue-Vuex-Nuxt", "MySQL", "Redis"],
+        "title": "Opporta - job platform for French GEIQ consortiums",
+        "description": "Connecting candidates with member companies of French employment-training consortiums (GEIQ): the platform centralizes job listings, recruitment events, and qualifying training programs. Visual identity designed alongside a freelance graphic designer.",
+        "points": [
+          "Symfony API, Vue front-end (Vuex and Nuxt), MySQL database",
+          "One-click application, spontaneous or for a specific listing",
+          "Recruitment events and qualifying training programs",
+          "Back-office: teams publish listings and events autonomously"
+        ],
+        "result": "platform in production, content published continuously by the teams.",
+        "site": "https://opporta.fr",
+        "siteLabel": "opporta"
+      },
+      "lda": {
+        "tags": ["WordPress", "Custom theme", "SEO"],
+        "title": "L'Agence d'Architecture - LDA / LDI showcase site",
+        "description": "Outdated site, hard to read on mobile, invisible on Google. Full redesign alongside a freelance graphic designer.",
+        "points": [
+          "Custom WordPress theme, true to the art direction",
+          "Responsive, showcasing architecture projects",
+          "SEO optimization",
+          "Team training for autonomous maintenance"
+        ],
+        "result": "modern, fast, well-ranked website - delivered on schedule.",
+        "site": "https://lagencedarchitecture.com",
+        "siteLabel": "lagencedarchitecture"
+      },
+      "mob": {
+        "tags": ["Nuxt", "Symfony", "MySQL", "Booking", "OpenStreetMap"],
+        "title": "La Mob à Papa - vintage moped therapy in Artois",
+        "description": "Rental of vintage mopeds, tandems, and period bikes to explore the Artois countryside - a warm site true to the garage's spirit.",
+        "points": [
+          "Nuxt front-end, Symfony API, MySQL database",
+          "Gallery, routes, and pricing",
+          "Online ride booking",
+          "Custom navigation system for the created routes",
+          "Full retro identity, from logo to copy"
+        ],
+        "result": "live, direct ride booking online.",
+        "site": "https://lamobapapa.fr",
+        "siteLabel": "lamobapapa"
+      }
     },
+    "side": {
+      "note": "on the side, for the fun of coding - playable directly here soon",
+      "label": "side project",
+      "wordgrid": {
+        "title": "Crossword grid generator",
+        "description": "Algorithmic generation of complete, valid grids - word placement, crossings, clues."
+      },
+      "boardgame": {
+        "title": "Board game ported online",
+        "description": "Porting a board game to a multiplayer web version - rules, online matches, real time."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "They've worked with me.",
+    "items": ["client testimonial to insert", "client testimonial to insert"],
+    "attribution": "Name, role, company"
+  },
+  "faq": {
+    "title": "Questions I get asked.",
     "items": [
       {
-        "title": "Migration of legacy internal tool to Symfony / Vue",
-        "context": "Internal tool in native PHP, unmaintained, no clear structure.",
-        "problem": "Code impossible to evolve, zero separation of concerns, no tests, security risks.",
-        "actions": "Complete rewrite from scratch: Symfony API, Vue front-end, clean architecture setup, authentication, deployment.",
-        "result": "Fully operational tool, team able to evolve the codebase smoothly, technical debt eliminated."
+        "q": "Is evening/weekend freelancing actually reliable?",
+        "a": "Yes, because the framework is clear from the start: defined slots (evenings 7-11pm, weekends), realistic hourly commitments, async communication that never blocks your team. You judge on delivery - clean, regular PRs."
       },
       {
-        "title": "WordPress brochure website — Architecture agency",
-        "context": "Agency wanting to redesign its brochure site to better showcase its projects.",
-        "problem": "Existing site outdated, poorly structured, unresponsive, no SEO optimization.",
-        "actions": "In collaboration with a designer, development of a custom WordPress theme: modern design, clear structure, responsive, SEO optimization, team training for maintenance.",
-        "result": "Modern, fast, well-ranked website — delivered on schedule."
+        "q": "How does billing work?",
+        "a": "Signed quote before anything starts. Monthly billing for packages, milestone-based for sprints and MVPs. Prices excl. VAT, no hidden costs - third-party services (hosting, licenses) stay under your name and control."
       },
       {
-        "title": "Portfolio",
-        "context": "Need for a clear and professional portfolio to showcase my offers and projects.",
-        "problem": "No portfolio, difficulty presenting my skills and experience in a structured way.",
-        "actions": "Design and development of a modern Nuxt portfolio, with smooth navigation, clear presentation of my offers, and dedicated project section.",
-        "result": "Professional, easy-to-navigate portfolio that effectively showcases my skills and experience."
+        "q": "What if the need exceeds the package?",
+        "a": "We see it coming together: shared, transparent time tracking. Anything outside scope gets a separate quote before being committed to - never a surprise on the invoice."
+      },
+      {
+        "q": "Who owns the code? Is an NDA possible?",
+        "a": "The code is fully yours upon payment: delivered to your Git repos, documented, with no dependency on me. NDAs and confidentiality clauses are no problem."
+      },
+      {
+        "q": "Do you take over existing code, or only build new?",
+        "a": "Both - and I particularly enjoy existing codebases: legacy takeover, stabilization, and gradual migration are my daily bread. No judgment on the state of the code, we start from wherever you are."
+      }
+    ]
+  },
+  "articles": {
+    "title": "Technical notes.",
+    "comingSoon": "coming soon",
+    "items": [
+      {
+        "title": "Migrating a legacy PHP app to Symfony without breaking everything",
+        "description": "Progressive rewrite strategy, lessons learned."
+      },
+      {
+        "title": "Performance checklist for a Symfony app in production",
+        "description": "Database, cache, profiling: the quick wins."
+      },
+      {
+        "title": "Evening freelancing: how I join a team without friction",
+        "description": "Git, PRs, reviews, async communication."
       }
     ]
   },
   "process": {
-    "title": "Process",
-    "subtitle": "A simple method: scope fast, deliver clean, maintain visibility.",
-    "durationBadge": "2 to 5 days (depending on scope)",
-    "aria": {
-      "stepWord": "Step",
-      "scrollerLabel": "Horizontal scroll of process"
-    },
-    "cards": {
-      "whatYouGetTitle": "What you get",
-      "whatYouGetText": "Clear scope, clean PRs, and a short summary.",
-      "outputTitle": "Output",
-      "outputText": "Delivered improvements + backlog of next steps."
-    },
-    "hint": "Scroll to navigate - Snap enabled",
+    "title": "Scope fast, deliver clean",
     "steps": [
       {
         "title": "Call",
@@ -275,7 +213,7 @@
       },
       {
         "title": "Proposal",
-        "text": "Format (package/sprint), budget, execution plan."
+        "text": "Format, budget, execution plan."
       },
       {
         "title": "Delivery",
@@ -283,40 +221,29 @@
       },
       {
         "title": "Follow-up",
-        "text": "Reporting + next steps."
+        "text": "Reporting + backlog of next steps."
       }
     ]
   },
   "contact": {
-    "title": "Contact",
     "subtitle": "Describe your context (stack, priority, timeline, constraints). I'll reply within 24h.",
     "fields": {
       "name": "Name",
-      "namePlaceholder": "John Doe",
       "mail": "Email",
-      "mailPlaceholder": "contact[at]company.com",
       "company": "Company (optional)",
-      "companyPlaceholder": "My great company",
-      "message": "Message",
-      "messagePlaceholder": "You can copy the template on the left to go faster.",
+      "message": "Your message (context, stack, priority, timeline, etc.)",
       "cta": "Send"
     },
-    "mail": "Email me",
+    "mailHint": "This button opens your email client with the message pre-filled.",
     "formTitle": "Tell me about your project",
     "copyMe": "Copy template",
-    "copied": "Copied!",
-    "template": "Template",
-    "copy": "copy"
+    "copied": "Copied!"
   },
   "footer": {
-    "availability": "Available evenings and weekends - Remote",
-    "rights": "All rights reserved.",
-    "quickStart": {
-      "text": "To get started quickly: send me your stack, your priority (from scratch / features / bugs / performance) and desired format (10h/20h or sprint). Reply within 24-48h."
-    }
+    "rights": "All rights reserved."
   },
   "mail": {
     "subject": "Project request",
-    "body": "Hi Florentin,\n\nWe could use some help with:\n- Context: \n- Language(s) used: \n- Priority (bugs / performance / new feature / from scratch): \n- What you're looking for (10h / 20h / per week / more?): \n\nBest regards,\n"
+    "body": "Hi Florentin,\n\nWe could use some help with:\n- Context: \n- Language(s) used: \n- Priority (bugs / performance / new feature / from scratch): \n- Desired format (10h / 20h / sprint / MVP): \n\nBest regards,\n"
   }
 }

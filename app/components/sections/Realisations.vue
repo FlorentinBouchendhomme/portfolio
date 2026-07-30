@@ -1,6 +1,6 @@
 <template>
   <section class="bg-[#FAF8F5] border-t border-[#E9E5DD]" aria-labelledby="realisations-title">
-    <div class="mx-auto max-w-6xl px-8 sm:px-16 py-16 sm:py-22">
+    <div v-reveal class="mx-auto max-w-6xl px-8 sm:px-16 py-16 sm:py-22">
       <div
         class="text-xs font-semibold uppercase tracking-widest text-[#A8442A] mb-3"
       >
@@ -18,13 +18,18 @@
         <div
           v-for="p in items"
           :key="p.key"
-          class="grid gap-8 sm:grid-cols-2 border border-[#E2DED6] bg-white p-6 sm:p-8 items-center cursor-pointer transition duration-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(28,25,23,0.1)]"
+          class="grid gap-8 sm:grid-cols-2 border border-[#E2DED6] bg-white p-6 sm:p-8 items-center cursor-pointer transition duration-200 hover:-translate-y-1 hover:scale-[1.015] hover:shadow-[0_20px_50px_rgba(28,25,23,0.1)]"
           @click="open(p.key)"
         >
           <div
-            class="rounded-[10px] border border-[#E9E5DD] h-70 flex items-center justify-center bg-gradient-to-br from-[#F3F0EA] to-[#EBD5CC]/40 text-[#A8442A] font-display text-lg"
+            class="rounded-[10px] border border-[#E9E5DD] h-70 overflow-hidden bg-[#F3F0EA]"
           >
-            {{ p.title }}
+            <img
+              :src="p.image"
+              :alt="p.title"
+              class="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-110"
+              loading="lazy"
+            />
           </div>
           <div class="flex flex-col gap-3.5">
             <div class="flex gap-2 flex-wrap">
@@ -103,10 +108,13 @@
           >
             ✕
           </button>
-          <div
-            class="h-70 flex items-center justify-center bg-gradient-to-br from-[#F3F0EA] to-[#EBD5CC]/40 text-[#A8442A] font-display text-xl"
-          >
-            {{ current?.title }}
+          <div class="h-70 overflow-hidden bg-[#F3F0EA]">
+            <img
+              v-if="current"
+              :src="current.image"
+              :alt="current.title"
+              class="w-full h-full object-cover object-top"
+            />
           </div>
           <div class="p-6 sm:p-10 flex flex-col gap-5">
             <div class="flex gap-2 flex-wrap">
@@ -161,17 +169,26 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
+import opportaImg from "~/assets/projects/opporta.png";
+import ldaImg from "~/assets/projects/lda.png";
+import mobImg from "~/assets/projects/lamobapapa.png";
 
 const { tm, t } = useI18n();
 const { toText, toTextArray } = useI18nText();
 
 const PROJECT_KEYS = ["opporta", "lda", "mob"] as const;
+const PROJECT_IMAGES: Record<(typeof PROJECT_KEYS)[number], string> = {
+  opporta: opportaImg,
+  lda: ldaImg,
+  mob: mobImg,
+};
 
 const items = computed(() =>
   PROJECT_KEYS.map((key) => {
     const base = `projects.items.${key}`;
     return {
       key,
+      image: PROJECT_IMAGES[key],
       tags: toTextArray(tm(`${base}.tags`) as any[]),
       title: toText(t(`${base}.title`)),
       description: toText(t(`${base}.description`)),
