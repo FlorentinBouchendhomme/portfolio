@@ -1,22 +1,38 @@
 <template>
   <div>
-    <section id="top" class="scroll-mt-24">
+    <section id="top" class="scroll-mt-16">
       <SectionsHero />
     </section>
 
-    <section id="about" class="scroll-mt-24">
-      <SectionsAbout />
-    </section>
-
-    <section id="offers" class="scroll-mt-24">
+    <section id="offers" class="scroll-mt-16">
       <SectionsOffers />
     </section>
 
-    <section id="testimonies" class="scroll-mt-24">
-      <SectionsTestimonies />
+    <section id="process" class="scroll-mt-16">
+      <SectionsProcessCards />
     </section>
 
-    <section id="contact" class="scroll-mt-24">
+    <section id="realisations" class="scroll-mt-16">
+      <SectionsRealisations />
+    </section>
+
+    <section id="about" class="scroll-mt-16">
+      <SectionsAbout />
+    </section>
+
+    <section id="testimonials" class="scroll-mt-16">
+      <SectionsTestimonials />
+    </section>
+
+    <section id="faq" class="scroll-mt-16">
+      <SectionsFaq />
+    </section>
+
+    <section id="articles" class="scroll-mt-16">
+      <SectionsArticles />
+    </section>
+
+    <section id="contact" class="scroll-mt-16">
       <SectionsContactForm />
     </section>
   </div>
@@ -24,8 +40,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: "Florentin Bouchendhomme — Fullstack Developer (PHP + Vue)",
+  title:
+    "Florentin Bouchend'homme - Développeur fullstack freelance (Symfony / Nuxt)",
   description:
-    "Freelance fullstack developer (PHP frameworks + Vue). Retainer (10-20h/month), bugfix & performance sprints, migrations, project from scratch. Remote-friendly.",
+    "Développeur fullstack freelance - Symfony, Nuxt / Vue. Renfort d'équipe, stabilisation, MVP. Remote, soir & week-end. Réponse sous 24h.",
 });
 </script>

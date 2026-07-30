@@ -1,80 +1,45 @@
 <template>
   <article
-    class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+    class="border p-7 flex flex-col gap-3 transition duration-200 hover:-translate-y-1"
+    :class="
+      highlighted
+        ? 'border-[#1C1917] bg-[#1C1917] text-[#FAF8F5] hover:shadow-[0_16px_40px_rgba(168,68,42,0.35)] hover:border-[#A8442A]'
+        : 'border-[#E2DED6] bg-white hover:shadow-[0_16px_40px_rgba(28,25,23,0.08)] hover:border-[#C9C2B4]'
+    "
     :aria-labelledby="titleId"
     :aria-describedby="subtitleId"
   >
-    <div class="flex items-start justify-between gap-4">
-      <div>
-        <h3 :id="titleId" class="text-base font-semibold text-slate-900">
-          {{ titleText }}
-        </h3>
-
-        <p :id="subtitleId" class="mt-2 text-sm text-slate-600">
-          {{ subtitleText }}
-        </p>
-      </div>
-
-      <div
-        class="shrink-0 rounded-xl bg-slate-900 px-3 py-1 text-xs font-semibold text-white"
-        :aria-label="`${$t('offers.priceLabel')}: ${priceText}`"
+    <div class="flex items-center justify-between gap-2 flex-wrap">
+      <h3
+        :id="titleId"
+        class="text-lg font-semibold"
+        :class="highlighted ? 'text-[#FAF8F5]' : 'text-[#1C1917]'"
       >
-        {{ priceText }}
-      </div>
+        {{ titleText }}
+      </h3>
+      <span
+        v-if="highlighted"
+        class="text-xs bg-[#A8442A] text-[#FAF8F5] rounded-full px-2.5 py-0.5"
+        >{{ $t("offers.popularLabel") }}</span
+      >
     </div>
 
-    <div class="mt-5">
-      <p class="text-xs font-semibold uppercase tracking-wide text-emerald-500">
-        {{ $t("offers.includedLabel") }}
-      </p>
+    <p
+      :id="subtitleId"
+      class="text-sm leading-relaxed flex-1"
+      :class="highlighted ? 'text-[#C7C2B8]' : 'text-[#57534E]'"
+    >
+      {{ subtitleText }}
+    </p>
 
-      <ul class="mt-2 space-y-2" :aria-label="$t('offers.includedLabel')">
-        <li
-          v-for="(x, i) in includesText"
-          :key="i"
-          class="flex gap-2 text-sm text-slate-700"
-        >
-          <span
-            class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full"
-            aria-hidden="true"
-          >
-            <img
-              src="~/assets/icones/check.svg"
-              alt=""
-              class="h-4 w-4"
-              aria-hidden="true"
-            />
-          </span>
-          <span>{{ x }}</span>
-        </li>
-      </ul>
-
-      <div v-if="excludesText.length" class="mt-4">
-        <p class="text-xs font-semibold uppercase tracking-wide text-emerald-500">
-          {{ $t("offers.notIncludedLabel") }}
-        </p>
-
-        <ul class="mt-2 space-y-2" :aria-label="$t('offers.notIncludedLabel')">
-          <li
-            v-for="(x, i) in excludesText"
-            :key="i"
-            class="flex gap-2 text-sm text-slate-600"
-          >
-            <span
-              class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full"
-              aria-hidden="true"
-            >
-              <img
-                src="~/assets/icones/close.svg"
-                alt=""
-                class="h-4 w-4"
-                aria-hidden="true"
-              />
-            </span>
-            <span>{{ x }}</span>
-          </li>
-        </ul>
-      </div>
+    <div
+      class="font-display text-2xl"
+      :class="highlighted ? 'text-[#FAF8F5]' : 'text-[#1C1917]'"
+    >
+      {{ priceText }}
+      <span class="text-lg" :class="highlighted ? 'text-[#C7C2B8]' : 'text-[#57534E]'">
+        {{ subPriceText }}
+      </span>
     </div>
   </article>
 </template>
@@ -86,25 +51,22 @@ type Props = {
   title: any;
   subtitle: any;
   price: any;
-  includes: any[];
-  excludes?: any[];
+  subPrice?: any;
+  highlighted?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  excludes: () => [],
+  highlighted: false,
 });
 
-const { toText, toTextArray } = useI18nText();
+const { toText } = useI18nText();
 
-// Stable unique ids for aria-labelledby / aria-describedby
 const uid = useId();
 const titleId = `offer-title-${uid}`;
 const subtitleId = `offer-subtitle-${uid}`;
 
-// Convert everything to plain text
 const titleText = computed(() => toText(props.title));
 const subtitleText = computed(() => toText(props.subtitle));
 const priceText = computed(() => toText(props.price));
-const includesText = computed(() => toTextArray(props.includes));
-const excludesText = computed(() => toTextArray(props.excludes));
+const subPriceText = computed(() => toText(props.subPrice));
 </script>

@@ -1,41 +1,28 @@
 <template>
   <header
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b"
     :class="
       scrolled
-        ? 'bg-[#0a0a0f]/90 backdrop-blur-md border-b border-white/5'
-        : 'bg-transparent'
+        ? 'bg-[#FAF8F5]/85 backdrop-blur-md border-[#E9E5DD]'
+        : 'bg-transparent border-transparent'
     "
   >
-    <div class="px-8 sm:px-16 h-14 flex items-center justify-between">
+    <div class="px-8 sm:px-16 h-16 flex items-center justify-between">
       <!-- Brand -->
       <NuxtLink
         to="/#top"
-        class="group flex items-center gap-2.5 font-mono text-sm font-bold tracking-tight text-white"
+        class="font-display text-xl text-[#1C1917] hover:text-[#A8442A] transition"
         aria-label="Retour en haut"
       >
-        <span class="text-[#00ff88]">&gt;</span>
-        <span class="transition group-hover:text-[#00ff88]"
-          >florentinbouchend'homme</span
-        >
-        <span class="animate-pulse text-[#00ff88]">_</span>
+        Florentin Bouchend'homme
       </NuxtLink>
 
       <!-- Desktop nav -->
       <nav
-        class="hidden items-center gap-1 md:flex"
+        class="hidden items-center gap-1 lg:flex"
         aria-label="Navigation principale"
       >
-        <div
-          class="relative flex items-center rounded-lg border border-white/10 bg-white/5 p-1"
-        >
-          <!-- Sliding indicator -->
-          <div
-            class="absolute top-1 bottom-1 rounded-md bg-white/10 transition-all duration-300 ease-out pointer-events-none"
-            :style="indicatorStyle"
-            aria-hidden="true"
-          ></div>
-
+        <div class="relative flex items-center">
           <a
             v-for="(link, i) in navLinks"
             :key="link.href"
@@ -45,52 +32,59 @@
               }
             "
             :href="link.href"
-            class="relative z-10 px-4 py-1.5 text-xs font-semibold tracking-wide transition-colors duration-200"
+            class="relative px-4 py-2 text-sm font-medium transition-colors duration-200"
             :class="
               activeSection === link.section
-                ? 'text-white'
-                : 'text-white/40 hover:text-white/70'
+                ? 'text-[#A8442A]'
+                : 'text-[#78716C] hover:text-[#1C1917]'
             "
             @click="setActive(link.section)"
             >{{ link.label }}</a
           >
-
-          <!-- Lang switcher -->
-          <div
-            class="ml-2 flex items-center rounded-md border border-white/10 bg-white/5 overflow-hidden"
-          >
-            <NuxtLink
-              :to="switchLocalePath('fr')"
-              class="px-2.5 py-1.5 text-xs font-bold transition"
-              :class="
-                isFR
-                  ? 'bg-[#00ff88] text-black'
-                  : 'text-white/40 hover:text-white/70'
-              "
-              >FR</NuxtLink
-            >
-            <NuxtLink
-              :to="switchLocalePath('en')"
-              class="px-2.5 py-1.5 text-xs font-bold transition"
-              :class="
-                !isFR
-                  ? 'bg-[#00ff88] text-black'
-                  : 'text-white/40 hover:text-white/70'
-              "
-              >EN</NuxtLink
-            >
-          </div>
+          <span
+            class="absolute bottom-0 h-0.5 bg-[#A8442A] transition-all duration-300 ease-out pointer-events-none"
+            :style="indicatorStyle"
+          ></span>
         </div>
+
+        <!-- Lang switcher -->
+        <div
+          class="ml-2 flex items-center rounded-md border border-[#E2DED6] overflow-hidden"
+        >
+          <NuxtLink
+            :to="switchLocalePath('fr')"
+            class="px-2.5 py-1.5 text-xs font-bold transition"
+            :class="
+              isFR ? 'bg-[#1C1917] text-[#FAF8F5]' : 'text-[#78716C] hover:text-[#1C1917]'
+            "
+            >FR</NuxtLink
+          >
+          <NuxtLink
+            :to="switchLocalePath('en')"
+            class="px-2.5 py-1.5 text-xs font-bold transition"
+            :class="
+              !isFR ? 'bg-[#1C1917] text-[#FAF8F5]' : 'text-[#78716C] hover:text-[#1C1917]'
+            "
+            >EN</NuxtLink
+          >
+        </div>
+
+        <a
+          href="#contact"
+          class="ml-3 inline-flex items-center gap-2 rounded-full bg-[#1C1917] px-5 py-2.5 text-sm font-semibold text-[#FAF8F5] transition hover:bg-[#A8442A]"
+        >
+          {{ $t("const.cta") }} ->
+        </a>
       </nav>
 
       <!-- Mobile burger -->
       <button
         type="button"
-        class="flex md:hidden h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/70 hover:text-white transition"
+        class="flex lg:hidden h-9 w-9 items-center justify-center rounded-full border border-[#E2DED6] text-[#1C1917] transition"
         :aria-expanded="isOpen"
         @click="isOpen = !isOpen"
       >
-        <span class="sr-only">{{t("const.menu")}}</span>
+        <span class="sr-only">{{ t("const.menu") }}</span>
         <svg
           v-if="!isOpen"
           class="h-4 w-4"
@@ -120,18 +114,24 @@
     >
       <div
         v-if="isOpen"
-        class="border-t border-white/5 bg-[#0a0a0f]/95 backdrop-blur-md md:hidden"
+        class="border-t border-[#E9E5DD] bg-[#FAF8F5]/95 backdrop-blur-md lg:hidden"
       >
         <div class="flex flex-col px-8 py-4 gap-1">
           <a
             v-for="link in navLinks"
             :key="link.href"
             :href="link.href"
-            class="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold text-white/60 hover:text-white hover:bg-white/5 transition font-mono"
+            class="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold text-[#57534E] hover:text-[#1C1917] hover:bg-black/5 transition"
             @click="isOpen = false"
           >
-            <span class="text-[#00ff88] text-xs">=></span>
             {{ link.label }}
+          </a>
+          <a
+            href="#contact"
+            class="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#1C1917] px-5 py-3 text-sm font-semibold text-[#FAF8F5] transition"
+            @click="isOpen = false"
+          >
+            {{ $t("const.cta") }} ->
           </a>
           <div class="mt-3 flex gap-2 px-3">
             <NuxtLink
@@ -139,8 +139,8 @@
               class="px-3 py-1.5 rounded text-xs font-bold transition"
               :class="
                 isFR
-                  ? 'bg-[#00ff88] text-black'
-                  : 'text-white/40 border border-white/10'
+                  ? 'bg-[#1C1917] text-[#FAF8F5]'
+                  : 'text-[#78716C] border border-[#E2DED6]'
               "
               >FR</NuxtLink
             >
@@ -149,8 +149,8 @@
               class="px-3 py-1.5 rounded text-xs font-bold transition"
               :class="
                 !isFR
-                  ? 'bg-[#00ff88] text-black'
-                  : 'text-white/40 border border-white/10'
+                  ? 'bg-[#1C1917] text-[#FAF8F5]'
+                  : 'text-[#78716C] border border-[#E2DED6]'
               "
               >EN</NuxtLink
             >
@@ -162,7 +162,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from "vue";
+import { ref, computed, watch, nextTick, onMounted, onBeforeUnmount } from "vue";
 
 const { locale, t } = useI18n();
 const isFR = computed(() => locale.value === "fr");
@@ -172,37 +172,70 @@ const isOpen = ref(false);
 const scrolled = ref(false);
 const activeSection = ref("top");
 const navRefs = ref<HTMLElement[]>([]);
+const navTick = ref(0);
 
 const navLinks = computed(() => [
-  { href: "#top", label: t("const.home"), section: "top" },
-  { href: "#about", label: t("const.about"), section: "about" },
   { href: "#offers", label: t("const.offers"), section: "offers" },
+  { href: "#process", label: t("const.process"), section: "process" },
   {
-    href: "#testimonies",
-    label: t("const.testimonies"),
-    section: "testimonies",
+    href: "#realisations",
+    label: t("const.projects"),
+    section: "realisations",
   },
-  { href: "#contact", label: t("const.contact"), section: "contact" },
+  { href: "#about", label: t("const.about"), section: "about" },
+  { href: "#faq", label: t("const.faq"), section: "faq" },
+  { href: "#articles", label: t("const.articles"), section: "articles" },
 ]);
 
 const indicatorStyle = computed(() => {
+  navTick.value; // eslint-disable-line no-unused-expressions -- re-run on resize
   const idx = navLinks.value.findIndex(
     (l) => l.section === activeSection.value,
   );
   const el = navRefs.value[idx];
-  if (!el) return { width: "0px", left: "0px" };
-  return { width: `${el.offsetWidth}px`, left: `${el.offsetLeft}px` };
+  if (!el) return { width: "0px", left: "0px", opacity: "0" };
+  return {
+    width: `${el.offsetWidth}px`,
+    left: `${el.offsetLeft}px`,
+    opacity: "1",
+  };
 });
+
+// Reverse document order - used to find the deepest section already scrolled past.
+// "testimonials" has no nav link of its own (by design), so it's intentionally
+// omitted: while scrolled through it, this naturally falls through to "about",
+// the nearest preceding section that does have a link - no dead zone.
+const SCROLL_SPY_SECTIONS = [
+  "contact",
+  "articles",
+  "faq",
+  "about",
+  "realisations",
+  "process",
+  "offers",
+  "top",
+];
+
+let clickScrollTimer: ReturnType<typeof setTimeout> | null = null;
+const isClickScrolling = ref(false);
 
 function setActive(section: string) {
   activeSection.value = section;
   isOpen.value = false;
+  // Ignore scroll-spy updates while the smooth-scroll triggered by this click
+  // is still in flight, otherwise the indicator jitters through every
+  // in-between section instead of jumping straight to the target.
+  isClickScrolling.value = true;
+  if (clickScrollTimer) clearTimeout(clickScrollTimer);
+  clickScrollTimer = setTimeout(() => {
+    isClickScrolling.value = false;
+  }, 900);
 }
 
 function onScroll() {
   scrolled.value = window.scrollY > 20;
-  const sections = ["contact", "testimonies", "offers", "about", "top"];
-  for (const id of sections) {
+  if (isClickScrolling.value) return;
+  for (const id of SCROLL_SPY_SECTIONS) {
     const el = document.getElementById(id);
     if (el && window.scrollY >= el.offsetTop - 120) {
       activeSection.value = id;
@@ -215,12 +248,27 @@ function onKeydown(e: KeyboardEvent) {
   if (e.key === "Escape") isOpen.value = false;
 }
 
+function onResize() {
+  navTick.value++;
+}
+
+// Nav link widths change when the locale switches (different label lengths);
+// re-measure once the DOM has updated with the new text.
+watch(locale, () => {
+  nextTick(() => navTick.value++);
+});
+
 onMounted(() => {
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("keydown", onKeydown);
+  window.addEventListener("resize", onResize);
+  // Nav link widths depend on the loaded webfont; force a re-measure once ready.
+  document.fonts?.ready?.then(() => navTick.value++);
 });
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", onScroll);
   window.removeEventListener("keydown", onKeydown);
+  window.removeEventListener("resize", onResize);
+  if (clickScrollTimer) clearTimeout(clickScrollTimer);
 });
 </script>

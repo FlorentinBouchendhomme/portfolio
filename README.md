@@ -53,5 +53,5 @@ Every push to `main` triggers a production deployment.
 
 ## Scripts
 
-- `npm run dev` — start dev server
-- `npm run build` — build for production (Cloudflare Pages output: `dist`)
+- `npm run dev` - start dev server
+- `npm run build` - build for production (Cloudflare Pages output: `dist`)
