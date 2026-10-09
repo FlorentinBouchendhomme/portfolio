@@ -120,21 +120,46 @@
           class="grid-swiss gap-y-8 mt-8 lg:mt-10"
         >
           <figure
-            v-if="current.code"
+            v-if="current.code && snippet"
             class="sm:col-span-6 lg:col-span-7 bg-ink text-paper min-w-0"
           >
+            <!-- One tab per file when the project has several excerpts -->
+            <div
+              v-if="current.code.length > 1"
+              class="scroll-x flex border-b border-paper/20 font-mono text-xs"
+              role="tablist"
+              :aria-label="$t('projects.codeLabel')"
+            >
+              <button
+                v-for="(c, i) in current.code"
+                :key="c.file"
+                type="button"
+                role="tab"
+                class="shrink-0 whitespace-nowrap min-h-11 px-4 transition-colors"
+                :class="[
+                  i > 0 && 'border-l border-paper/20',
+                  activeSnippet === i
+                    ? 'bg-paper/10 text-paper'
+                    : 'text-paper/55 hover:text-paper',
+                ]"
+                :aria-selected="activeSnippet === i"
+                @click="activeSnippet = i"
+              >
+                {{ fileName(c.file) }}
+              </button>
+            </div>
             <figcaption
               class="flex flex-wrap justify-between gap-2 border-b border-paper/20 px-5 py-3 font-mono text-xs text-paper/70"
             >
-              <span>{{ current.code.file }}</span>
+              <span>{{ snippet.file }}</span>
               <span
-                >PR #{{ current.code.pr }} ·
+                >{{ prLabel(snippet.pr) }} ·
                 {{ $t("projects.mergedLabel") }}</span
               >
             </figcaption>
             <pre
-              class="overflow-x-auto p-5 font-mono text-[12.5px] leading-relaxed"
-            ><code>{{ current.code.snippet }}</code></pre>
+              class="overflow-auto max-h-105 p-5 font-mono text-[12.5px] leading-relaxed"
+            ><code>{{ snippet.snippet }}</code></pre>
           </figure>
 
           <blockquote
@@ -309,7 +334,7 @@ const items = computed(() =>
             author: quoteRaw.author ? toText(quoteRaw.author) : "",
           }
         : null,
-      code: p.code?.snippet ? p.code : null,
+      code: Array.isArray(p.code) ? (p.code.length ? p.code : null) : null,
     };
   }),
 );
@@ -331,6 +356,24 @@ const sideProjects = computed(() => [
 const active = ref(0);
 const tabRefs = ref<HTMLButtonElement[]>([]);
 const current = computed(() => items.value[active.value]);
+
+/* ==============
+ * Code excerpts
+ * ============== */
+const activeSnippet = ref(0);
+const snippet = computed(() => current.value?.code?.[activeSnippet.value]);
+
+// Back to the first excerpt when switching project
+watch(active, () => (activeSnippet.value = 0));
+
+function fileName(path: string) {
+  return path.split("/").pop() ?? path;
+}
+
+// "45" → "PR #45"; a full PR title ("feat(x): … #45") is shown as is
+function prLabel(pr: string) {
+  return /^\d+$/.test(pr) ? `PR #${pr}` : pr;
+}
 
 function onTabKeydown(e: KeyboardEvent) {
   const n = items.value.length;
