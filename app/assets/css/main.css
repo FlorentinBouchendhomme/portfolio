@@ -1,89 +1,160 @@
 @import "tailwindcss";
 
+/* =============
+ * Design tokens
+ * ============= */
+@theme {
+  --font-sans: "Archivo", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-paper: #f4f4f2;
+  --color-ink: #111111;
+  --color-accent: oklch(0.6 0.19 38);
+}
+
 @layer base {
-  :root {
-    --font-sans: "Instrument Sans", system-ui, sans-serif;
-    --font-display: "Instrument Serif", serif;
-    --font-mono: "JetBrains Mono", ui-monospace, monospace;
-
-    /* Background */
-    --color-cream: #faf8f5;
-    --color-cream-alt: #f3f0ea;
-    --color-dark: #1c1917;
-    --color-dark-2: #201a16;
-    --color-dark-3: #26211c;
-
-    /* Borders */
-    --color-border: #e9e5dd;
-    --color-border-2: #e2ded6;
-    --color-border-3: #ddd8ce;
-    --color-border-dark: #2e2822;
-    --color-border-dark-2: #38302a;
-    --color-border-dark-3: #4a403a;
-    --color-chip-border: #ebd5cc;
-
-    /* Muted */
-    --color-muted: #57534e;
-    --color-muted-2: #78716c;
-    --color-muted-3: #a8a29e;
-
-    /* Accents */
-    --color-accent: #a8442a;
-    --color-accent-light: #e8a87c;
-    --color-available: #3d9a5d;
-
-    --color-bg: var(--color-cream);
-  }
-
   html {
     font-family: var(--font-sans);
-    background-color: var(--color-bg);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background-color: #a8442a30;
-    color: #a8442a;
+    background-color: var(--color-accent);
+    color: #fff;
   }
 
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
   }
+}
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #1c191715;
-    border-radius: 3px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #1c191725;
+/* ======
+ * Layout
+ * ====== */
+@utility wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1280px;
+  padding-inline: 20px;
+  @media (width >= 40rem) {
+    padding-inline: 40px;
   }
 }
 
-@layer utilities {
-  .font-display {
-    font-family: var(--font-display);
+@utility grid-swiss {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  @media (width >= 40rem) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
-  .font-mono {
-    font-family: var(--font-mono);
+  @media (width >= 64rem) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+/* ==========
+ * Typography
+ * ========== */
+@utility display-1 {
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+  @media (width >= 40rem) {
+    font-size: 80px;
+  }
+  @media (width >= 64rem) {
+    font-size: 128px;
+  }
+}
+
+@utility display-2 {
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  @media (width >= 40rem) {
+    font-size: 40px;
+  }
+  @media (width >= 64rem) {
+    font-size: 56px;
+  }
+}
+
+/* Section label (mono, numbered) */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* =======
+ * Buttons
+ * ======= */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 18px 26px;
+  font-weight: 700;
+  line-height: 1;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+@utility btn-primary {
+  background-color: var(--color-accent);
+  color: #fff;
+  &:hover {
+    background-color: var(--color-ink);
+  }
+}
+
+@utility btn-secondary {
+  border: 2px solid var(--color-ink);
+  background-color: transparent;
+  color: var(--color-ink);
+  &:hover {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+}
+
+/* Image placeholder: diagonal hatching */
+@utility hatch {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgb(17 17 17 / 0.05) 0 5px,
+    transparent 5px 10px
+  );
+}
+
+/* Horizontal scroll without visible scrollbar (stack strip, tabs on mobile) */
+@utility scroll-x {
+  overflow-x: auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
 .reveal-init {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(20px);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 .reveal-visible {
   opacity: 1;
@@ -91,6 +162,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   .reveal-init {
     opacity: 1;
     transform: none;
