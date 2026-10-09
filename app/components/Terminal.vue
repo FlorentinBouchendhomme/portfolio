@@ -1,36 +1,43 @@
 <template>
   <div>
     <div
-      class="rounded-xl border border-[#38302A] bg-[#201A16] overflow-hidden shadow-[0_32px_70px_rgba(32,26,22,0.35)] cursor-text"
+      ref="rootEl"
+      class="border-2 border-paper/25 bg-ink cursor-text focus:outline-none focus-visible:outline-2 focus-visible:outline-accent"
       role="region"
-      aria-label="Terminal interactif"
+      :aria-label="$t('terminal.hint')"
+      tabindex="0"
       @click="activate"
+      @keydown.enter.self="activate"
     >
       <!-- Titlebar -->
       <div
-        class="flex items-center gap-2 border-b border-[#38302A] px-4 py-3.5"
+        class="flex items-center gap-3 border-b border-paper/20 pl-4 font-mono text-xs"
       >
-        <span class="h-2.75 w-2.75 rounded-full bg-[#4A403A]"></span>
-        <span class="h-2.75 w-2.75 rounded-full bg-[#4A403A]"></span>
-        <span class="h-2.75 w-2.75 rounded-full bg-[#4A403A]"></span>
-        <span class="ml-2 font-mono text-xs text-[#9A938A]"
-          >florentin@portfolio ~</span
-        >
-        <span class="ml-auto font-mono text-[11px] text-[#6B6259]">{{
+        <span class="h-2 w-2 bg-accent" aria-hidden="true"></span>
+        <span class="text-paper/70">florentin@portfolio ~</span>
+        <span class="ml-auto hidden sm:inline text-paper/55">{{
           $t("terminal.hint")
         }}</span>
+        <button
+          type="button"
+          class="h-11 w-11 flex items-center justify-center border-l border-paper/20 text-paper/70 hover:text-accent"
+          :aria-label="$t('terminal.close')"
+          @click.stop="emit('close')"
+        >
+          ✕
+        </button>
       </div>
 
       <!-- Body -->
       <div
         ref="termBody"
-        class="p-5.5 font-mono text-sm leading-loose h-65.5 overflow-y-auto"
+        class="p-5 font-mono text-sm leading-loose h-80 overflow-y-auto"
       >
         <div
           v-for="(ln, i) in lines"
           :key="i"
           class="whitespace-pre-wrap"
-          :style="{ color: roleColor(ln.role) }"
+          :class="ROLE_CLASSES[ln.role]"
         >
           {{ ln.text }}
         </div>
@@ -44,32 +51,33 @@
           }"
           >{{ parrotFrame }}</pre
         >
-        <div v-if="parrotOn" class="text-[#6B6259] italic text-xs">
+        <div v-if="parrotOn" class="text-paper/55 italic text-xs">
           {{ $t("terminal.stop") }}
         </div>
 
-        <div class="flex items-center text-[#9A938A]">
+        <div class="flex items-center text-paper/55">
           <span>$&nbsp;</span>
-          <span class="text-[#F3EFE9]">{{ typedDemo }}</span>
+          <span class="text-paper">{{ typedDemo }}</span>
           <input
             v-if="interactive"
             ref="inputEl"
             v-model="typed"
             spellcheck="false"
             autocomplete="off"
-            class="flex-1 bg-transparent outline-none border-none text-[#F3EFE9] font-mono text-sm caret-[#E8A87C]"
+            :aria-label="$t('terminal.hint')"
+            class="flex-1 bg-transparent outline-none border-none text-paper font-mono text-sm caret-accent"
             @keydown.enter="onEnter"
           />
           <span
             v-else
-            class="inline-block w-2 h-4.25 bg-[#E8A87C] terminal-caret"
+            class="inline-block w-2 h-4 bg-accent terminal-caret"
           ></span>
         </div>
       </div>
     </div>
-    <p class="mt-3 text-center font-mono text-xs text-[#78716C]">
+    <p class="mt-3 text-center font-mono text-xs text-paper/70">
       {{ $t("terminal.write") }}
-      <span class="text-[#A8442A]">help</span>
+      <span class="text-accent">help</span>
       {{ $t("terminal.toStart") }}
     </p>
   </div>
@@ -77,21 +85,21 @@
 
 <script setup lang="ts">
 import { ref, nextTick, onMounted, onBeforeUnmount } from "vue";
+import { SITE_EMAIL, SITE_PHONE } from "~/composables/useSiteConfig";
 
+const emit = defineEmits<{ close: [] }>();
 const { t } = useI18n();
 
 type Role = "cmd" | "out" | "ok";
 type Line = { text: string; role: Role };
 
-const ROLE_COLORS: Record<Role, string> = {
-  cmd: "#9A938A",
-  out: "#F3EFE9",
-  ok: "#E8A87C",
+const ROLE_CLASSES: Record<Role, string> = {
+  cmd: "text-paper/55",
+  out: "text-paper",
+  ok: "text-accent",
 };
-function roleColor(r: Role) {
-  return ROLE_COLORS[r];
-}
 
+const rootEl = ref<HTMLElement | null>(null);
 const termBody = ref<HTMLElement | null>(null);
 const inputEl = ref<HTMLInputElement | null>(null);
 const lines = ref<Line[]>([]);
@@ -112,9 +120,9 @@ async function scrollToBottom() {
   if (termBody.value) termBody.value.scrollTop = termBody.value.scrollHeight;
 }
 
-/* =============
+/* ============
  * Party parrot
- * ============= */
+ * ============ */
 import frame0 from "~/assets/frames/frame0.txt?raw";
 import frame1 from "~/assets/frames/frame1.txt?raw";
 import frame2 from "~/assets/frames/frame2.txt?raw";
@@ -175,9 +183,9 @@ function stopParrot() {
   parrotOn.value = false;
 }
 
-/* =========
+/* ========
  * Commands
- * ========= */
+ * ======== */
 function push(text: string, role: Role = "out") {
   lines.value.push({ text, role });
 }
@@ -202,6 +210,10 @@ function exec(raw: string) {
     scrollToBottom();
     return;
   }
+  if (cmd === "exit") {
+    emit("close");
+    return;
+  }
 
   if (cmd === "help") {
     push(t("terminal.helpTitle"));
@@ -217,10 +229,16 @@ function exec(raw: string) {
     push(`${t("terminal.stackData")}   PostgreSQL / MySQL`);
     push(`${t("terminal.stackOps")}    Docker / CI/CD / Git`);
   } else if (cmd === "offres") {
-    push(`${t("offers.retainer10.name")} .......... ${t("offers.retainer10.price")}`);
-    push(`${t("offers.retainer20.name")} .......... ${t("offers.retainer20.price")}`);
+    push(
+      `${t("offers.retainer10.name")} .......... ${t("offers.retainer10.price")}`,
+    );
+    push(
+      `${t("offers.retainer20.name")} .......... ${t("offers.retainer20.price")}`,
+    );
     push(`${t("offers.sprint.name")} .......... ${t("offers.sprint.price")}`);
-    push(`${t("offers.fromScratch.name")} .......... ${t("offers.fromScratch.price")}`);
+    push(
+      `${t("offers.fromScratch.name")} .......... ${t("offers.fromScratch.price")}`,
+    );
   } else if (cmd === "dispo") {
     push(`${t("terminal.dispoLine")}`, "ok");
   } else if (cmd === "projets") {
@@ -229,11 +247,13 @@ function exec(raw: string) {
     push("-> lamobapapa - Nuxt / Symfony / MySQL");
     push(t("terminal.projectsSideLabel"));
   } else if (cmd === "contact") {
-    push(`${EMAIL}`, "ok");
-    push(`${PHONE}`, "ok");
+    push(`${SITE_EMAIL}`, "ok");
+    push(`${SITE_PHONE}`, "ok");
     push(t("terminal.contactDelay"), "ok");
   } else {
-    push(`${t("terminal.unknownCommand")} : '${cmd}' - ${t("terminal.write")} help`);
+    push(
+      `${t("terminal.unknownCommand")} : '${cmd}' - ${t("terminal.write")} help`,
+    );
   }
 
   typed.value = "";
@@ -243,9 +263,6 @@ function exec(raw: string) {
 function onEnter() {
   exec(typed.value);
 }
-
-const EMAIL = "contact@florentinbouchendhomme.dev";
-const PHONE = "+33 6 00 00 00 00";
 
 function activate() {
   if (!interactive.value) {
@@ -268,7 +285,10 @@ async function runDemo() {
       cmd: "florentin --stack",
       out: [
         { text: "symfony / nuxt / vue / next / react", role: "out" as Role },
-        { text: "typescript / postgresql / docker / ci/cd", role: "out" as Role },
+        {
+          text: "typescript / postgresql / docker / ci/cd",
+          role: "out" as Role,
+        },
       ],
     },
     {
@@ -278,7 +298,10 @@ async function runDemo() {
     {
       cmd: "florentin --methode",
       out: [
-        { text: "PR propres / reviews / livraisons régulières", role: "ok" as Role },
+        {
+          text: "PR propres / reviews / livraisons régulières",
+          role: "ok" as Role,
+        },
       ],
     },
   ];
@@ -307,6 +330,7 @@ async function runDemo() {
 
 onMounted(() => {
   mounted = true;
+  rootEl.value?.focus();
   runDemo();
 });
 onBeforeUnmount(() => {
