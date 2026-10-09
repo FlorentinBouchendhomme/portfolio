@@ -1,56 +1,49 @@
 <template>
-  <section
-    class="bg-[#F3F0EA] border-t border-[#E9E5DD]"
-    aria-labelledby="faq-title"
-  >
-    <div v-reveal class="mx-auto max-w-3xl px-8 sm:px-16 py-16 sm:py-22">
-      <div
-        class="text-xs font-semibold uppercase tracking-widest text-[#A8442A] mb-3"
-      >
-        {{ $t("const.faq") }}
+  <section class="wrap" aria-labelledby="faq-title">
+    <div v-reveal class="grid-swiss gap-y-10 pt-16 pb-20 lg:pt-20 lg:pb-28">
+      <div class="sm:col-span-6 lg:col-span-4">
+        <div class="eyebrow text-ink/55 mb-4">05 / {{ $t("const.faq") }}</div>
+        <h2 id="faq-title" class="display-2">{{ $t("faq.title") }}</h2>
       </div>
-      <h2
-        id="faq-title"
-        class="font-display font-normal text-[#1C1917] mb-10"
-        style="font-size: clamp(2rem, 3.5vw, 2.6rem)"
-      >
-        {{ $t("faq.title") }}
-      </h2>
 
-      <div class="flex flex-col">
-        <div
-          v-for="(item, i) in items"
-          :key="i"
-          class="border-b border-[#E9E5DD]"
-        >
-          <button
-            type="button"
-            class="w-full flex justify-between items-center gap-5 py-5.5 text-left cursor-pointer"
-            :aria-expanded="openIndex === i"
-            @click="toggle(i)"
-          >
-            <span class="font-semibold text-[#1C1917]">{{ item.q }}</span>
-            <span
-              class="relative w-5 h-5 shrink-0 text-[#A8442A]"
-              aria-hidden="true"
+      <div
+        class="sm:col-span-6 lg:col-start-6 lg:col-span-7 border-t-2 border-ink"
+      >
+        <div v-for="(item, i) in items" :key="i" class="border-b border-ink/20">
+          <h3>
+            <button
+              :id="`faq-q-${i}`"
+              type="button"
+              class="w-full min-h-11 flex justify-between items-center gap-5 py-5 text-left text-lg font-bold leading-snug cursor-pointer"
+              :aria-expanded="openIndex === i"
+              :aria-controls="`faq-a-${i}`"
+              @click="toggle(i)"
             >
+              <span>{{ item.q }}</span>
               <span
-                class="absolute inset-0 m-auto w-3 h-0.5 bg-current"
-              ></span>
-              <span
-                class="absolute inset-0 m-auto w-0.5 h-3 bg-current transition-transform duration-300 ease-out"
-                :class="openIndex === i ? 'rotate-90' : 'rotate-0'"
-              ></span>
-            </span>
-          </button>
+                class="relative w-5 h-5 shrink-0 text-accent"
+                aria-hidden="true"
+              >
+                <span
+                  class="absolute inset-0 m-auto w-3.5 h-0.5 bg-current"
+                ></span>
+                <span
+                  class="absolute inset-0 m-auto w-0.5 h-3.5 bg-current transition-transform duration-200"
+                  :class="openIndex === i ? 'scale-y-0' : 'scale-y-100'"
+                ></span>
+              </span>
+            </button>
+          </h3>
           <div
+            :id="`faq-a-${i}`"
+            role="region"
+            :aria-labelledby="`faq-q-${i}`"
             class="grid transition-[grid-template-rows] duration-300"
-            :style="{
-              gridTemplateRows: openIndex === i ? '1fr' : '0fr',
-            }"
+            :style="{ gridTemplateRows: openIndex === i ? '1fr' : '0fr' }"
+            :inert="openIndex !== i"
           >
             <div class="overflow-hidden">
-              <p class="text-[#57534E] leading-relaxed pb-5.5 pr-4 max-w-xl">
+              <p class="text-[15px] text-ink/70 leading-relaxed pb-6 max-w-155">
                 {{ item.a }}
               </p>
             </div>
@@ -76,6 +69,7 @@ const items = computed(() =>
   })),
 );
 
+// First question open by default, only one open at a time
 const openIndex = ref(0);
 function toggle(i: number) {
   openIndex.value = openIndex.value === i ? -1 : i;

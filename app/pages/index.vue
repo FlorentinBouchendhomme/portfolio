@@ -1,44 +1,48 @@
 <template>
   <div>
-    <section id="top" class="scroll-mt-16">
+    <div id="top" class="scroll-mt-16">
       <SectionsHero />
-    </section>
+    </div>
 
-    <section id="offers" class="scroll-mt-16">
+    <SectionsStackStrip />
+
+    <div id="offers" class="scroll-mt-16">
       <SectionsOffers />
-    </section>
+    </div>
 
-    <section id="process" class="scroll-mt-16">
-      <SectionsProcessCards />
-    </section>
-
-    <section id="realisations" class="scroll-mt-16">
+    <div id="realisations" class="scroll-mt-16">
       <SectionsRealisations />
-    </section>
+    </div>
 
-    <section id="about" class="scroll-mt-16">
+    <div id="process" class="scroll-mt-16">
+      <SectionsProcessCards />
+    </div>
+
+    <div id="about" class="scroll-mt-16">
       <SectionsAbout />
-    </section>
+    </div>
 
-    <section id="testimonials" class="scroll-mt-16">
+    <div id="testimonials" class="scroll-mt-16">
       <SectionsTestimonials />
-    </section>
+    </div>
 
-    <section id="faq" class="scroll-mt-16">
+    <div id="faq" class="scroll-mt-16">
       <SectionsFaq />
-    </section>
+    </div>
 
-    <section id="articles" class="scroll-mt-16">
+    <div v-if="SHOW_ARTICLES" id="articles" class="scroll-mt-16">
       <SectionsArticles />
-    </section>
+    </div>
 
-    <section id="contact" class="scroll-mt-16">
+    <div id="contact" class="scroll-mt-16">
       <SectionsContactForm />
-    </section>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { SHOW_ARTICLES } from "~/composables/useSiteConfig";
+
 useSeoMeta({
   title:
     "Florentin Bouchend'homme - Développeur fullstack freelance (Symfony / Nuxt)",

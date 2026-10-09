@@ -1,162 +1,287 @@
 <template>
-  <section class="bg-[#FAF8F5] border-t border-[#E9E5DD]" aria-labelledby="realisations-title">
-    <div v-reveal class="mx-auto max-w-6xl px-8 sm:px-16 py-16 sm:py-22">
-      <div
-        class="text-xs font-semibold uppercase tracking-widest text-[#A8442A] mb-3"
-      >
-        {{ $t("const.projects") }}
-      </div>
-      <h2
-        id="realisations-title"
-        class="font-display font-normal text-[#1C1917] mb-11"
-        style="font-size: clamp(2rem, 3.5vw, 2.6rem)"
-      >
-        {{ $t("projects.title") }}
-      </h2>
-
-      <div class="flex flex-col gap-6">
-        <div
-          v-for="p in items"
-          :key="p.key"
-          class="grid gap-8 sm:grid-cols-2 border border-[#E2DED6] bg-white p-6 sm:p-8 items-center cursor-pointer transition duration-200 hover:-translate-y-1 hover:scale-[1.015] hover:shadow-[0_20px_50px_rgba(28,25,23,0.1)]"
-          @click="open(p.key)"
-        >
-          <div
-            class="rounded-[10px] border border-[#E9E5DD] h-70 overflow-hidden bg-[#F3F0EA]"
-          >
-            <img
-              :src="p.image"
-              :alt="p.title"
-              class="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-110"
-              loading="lazy"
-            />
+  <section class="wrap" aria-labelledby="realisations-title">
+    <div v-reveal class="border-t-2 border-ink pt-10 pb-20 lg:pb-28">
+      <!-- Header: title + tabs -->
+      <div class="grid-swiss gap-y-6 items-end mb-10 lg:mb-14">
+        <div class="sm:col-span-6 lg:col-span-7">
+          <div class="eyebrow text-ink/55 mb-4">
+            02 / {{ $t("const.projects") }}
           </div>
-          <div class="flex flex-col gap-3.5">
-            <div class="flex gap-2 flex-wrap">
-              <span
-                v-for="tag in p.tags"
-                :key="tag"
-                class="text-xs text-[#A8442A] border border-[#EBD5CC] rounded-full px-3 py-1"
-                >{{ tag }}</span
+          <h2 id="realisations-title" class="display-2">
+            {{ $t("projects.title") }}
+          </h2>
+        </div>
+        <div class="sm:col-span-6 lg:col-span-5 flex lg:justify-end min-w-0">
+          <div
+            class="scroll-x flex border-2 border-ink max-w-full"
+            role="tablist"
+            :aria-label="$t('projects.tabsLabel')"
+            @keydown="onTabKeydown"
+          >
+            <button
+              v-for="(p, i) in items"
+              :id="`tab-${p.key}`"
+              :key="p.key"
+              :ref="(el) => (tabRefs[i] = el as HTMLButtonElement)"
+              type="button"
+              role="tab"
+              class="shrink-0 whitespace-nowrap min-h-11 px-4 py-3 text-sm font-bold transition-colors"
+              :class="[
+                i > 0 && 'border-l-2 border-ink',
+                active === i ? 'bg-ink text-paper' : 'hover:bg-ink/5',
+              ]"
+              :aria-selected="active === i"
+              :aria-controls="`panel-${p.key}`"
+              :tabindex="active === i ? 0 : -1"
+              @click="active = i"
+            >
+              {{ p.tab }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active project -->
+      <div
+        v-if="current"
+        :id="`panel-${current.key}`"
+        role="tabpanel"
+        :aria-labelledby="`tab-${current.key}`"
+      >
+        <div class="grid-swiss gap-y-8">
+          <div class="sm:col-span-6 lg:col-span-7">
+            <div class="aspect-16/10 border-2 border-ink overflow-hidden hatch">
+              <img
+                :src="current.image.src"
+                :width="current.image.width"
+                :height="current.image.height"
+                :alt="current.title"
+                class="w-full h-full object-cover object-top"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <div class="sm:col-span-6 lg:col-span-5 flex flex-col gap-5">
+            <ul
+              class="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-ink/70"
+            >
+              <li v-for="tag in current.tags" :key="tag">{{ tag }}</li>
+            </ul>
+            <h3
+              class="text-[26px] lg:text-[34px] font-extrabold leading-[1.05] tracking-[-0.03em]"
+            >
+              {{ current.title }}
+            </h3>
+            <p class="text-ink/70 leading-relaxed">{{ current.description }}</p>
+
+            <dl
+              v-if="current.metrics.length"
+              class="grid grid-cols-3 gap-4 border-t-2 border-ink pt-4"
+            >
+              <div
+                v-for="(m, i) in current.metrics"
+                :key="i"
+                class="flex flex-col-reverse justify-end gap-2"
               >
-            </div>
-            <h3 class="font-display text-2xl text-[#1C1917]">{{ p.title }}</h3>
-            <p class="text-[#57534E] leading-relaxed">{{ p.description }}</p>
-            <div class="text-[#1C1917]">
-              <strong class="text-[#A8442A]">{{ $t("projects.resultLabel") }} </strong>
-              {{ p.result }}
-            </div>
-            <div class="flex gap-5 items-center flex-wrap">
-              <span class="text-[#A8442A] font-semibold text-sm">{{
-                $t("projects.caseStudyCta")
-              }}</span>
+                <dt class="text-xs leading-snug text-ink/70">{{ m.label }}</dt>
+                <dd
+                  class="text-[30px] font-extrabold leading-none tracking-[-0.03em] text-accent"
+                >
+                  {{ m.value }}
+                </dd>
+              </div>
+            </dl>
+
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-1 mt-auto">
+              <button
+                type="button"
+                class="inline-flex min-h-11 items-center font-bold text-accent hover:text-ink transition-colors"
+                aria-haspopup="dialog"
+                @click="modalOpen = true"
+              >
+                {{ $t("projects.caseStudyCta") }}
+              </button>
               <a
-                :href="p.site"
+                :href="current.site"
                 target="_blank"
                 rel="noopener"
-                class="text-[#78716C] text-sm hover:text-[#A8442A] transition"
-                @click.stop
-                >{{ p.siteLabel }} -></a
+                class="inline-flex min-h-11 items-center font-mono text-sm text-ink/70 hover:text-ink transition-colors"
+                >{{ current.siteLabel }} ↗</a
               >
             </div>
           </div>
+        </div>
+
+        <!-- Code excerpt + client quote -->
+        <div
+          v-if="current.code || current.quote"
+          class="grid-swiss gap-y-8 mt-8 lg:mt-10"
+        >
+          <figure
+            v-if="current.code && snippet"
+            class="sm:col-span-6 lg:col-span-7 bg-ink text-paper min-w-0"
+          >
+            <!-- One tab per file when the project has several excerpts -->
+            <div
+              v-if="current.code.length > 1"
+              class="scroll-x flex border-b border-paper/20 font-mono text-xs"
+              role="tablist"
+              :aria-label="$t('projects.codeLabel')"
+            >
+              <button
+                v-for="(c, i) in current.code"
+                :key="c.file"
+                type="button"
+                role="tab"
+                class="shrink-0 whitespace-nowrap min-h-11 px-4 transition-colors"
+                :class="[
+                  i > 0 && 'border-l border-paper/20',
+                  activeSnippet === i
+                    ? 'bg-paper/10 text-paper'
+                    : 'text-paper/55 hover:text-paper',
+                ]"
+                :aria-selected="activeSnippet === i"
+                @click="activeSnippet = i"
+              >
+                {{ fileName(c.file) }}
+              </button>
+            </div>
+            <figcaption
+              class="flex flex-wrap justify-between gap-2 border-b border-paper/20 px-5 py-3 font-mono text-xs text-paper/70"
+            >
+              <span>{{ snippet.file }}</span>
+              <span
+                >{{ prLabel(snippet.pr) }} ·
+                {{ $t("projects.mergedLabel") }}</span
+              >
+            </figcaption>
+            <pre
+              class="overflow-auto max-h-105 p-5 font-mono text-[12.5px] leading-relaxed"
+            ><code>{{ snippet.snippet }}</code></pre>
+          </figure>
+
+          <blockquote
+            v-if="current.quote"
+            class="sm:col-span-6 lg:col-span-5 border-l-4 border-accent pl-6 self-start"
+            :class="{ 'lg:col-start-8': !current.code }"
+          >
+            <p class="text-xl font-bold leading-snug tracking-[-0.02em]">
+              « {{ current.quote.text }} »
+            </p>
+            <footer
+              v-if="current.quote.author"
+              class="mt-4 font-mono text-xs text-ink/70"
+            >
+              {{ current.quote.author }}
+            </footer>
+          </blockquote>
         </div>
       </div>
 
       <!-- Side projects -->
-      <div class="mt-14">
-        <div class="font-mono text-xs text-[#78716C] mb-5">
+      <div class="mt-16 border-t border-ink/20 pt-6">
+        <div class="font-mono text-xs text-ink/55 mb-4">
           // {{ $t("projects.side.note") }}
         </div>
-        <div class="grid gap-5 sm:grid-cols-2">
-          <div
+        <ul class="grid-swiss gap-y-6">
+          <li
             v-for="side in sideProjects"
             :key="side.title"
-            class="border border-[#E2DED6] bg-white p-6 flex flex-col gap-2.5 transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(28,25,23,0.08)]"
+            class="sm:col-span-3 lg:col-span-6 flex flex-col gap-2"
           >
-            <div class="flex justify-between items-center gap-2 flex-wrap">
-              <div class="font-semibold text-[#1C1917]">{{ side.title }}</div>
-              <span
-                class="font-mono text-[11px] text-[#A8442A] border border-[#EBD5CC] rounded-full px-2.5 py-0.5"
-                >{{ $t("projects.side.label") }}</span
-              >
+            <div class="flex flex-wrap items-baseline gap-x-3">
+              <span class="font-bold">{{ side.title }}</span>
+              <span class="font-mono text-[11px] text-accent">{{
+                $t("projects.side.label")
+              }}</span>
             </div>
-            <p class="text-sm text-[#57534E] leading-relaxed">
+            <p class="text-sm text-ink/70 leading-relaxed">
               {{ side.description }}
             </p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Case study modal -->
     <Teleport to="body">
       <div
-        v-if="openKey"
-        class="fixed inset-0 z-100 bg-[#1C1917]/65 backdrop-blur-sm flex items-center justify-center p-4 sm:p-12"
-        @click="close"
+        v-if="modalOpen && current"
+        class="fixed inset-0 z-100 bg-ink/70 flex items-center justify-center p-4 sm:p-12"
+        @click.self="modalOpen = false"
       >
         <div
-          class="bg-[#FAF8F5] rounded-[14px] max-w-3xl w-full max-h-[88vh] overflow-y-auto relative shadow-[0_40px_100px_rgba(0,0,0,0.45)]"
-          @click.stop
+          class="bg-paper border-2 border-ink max-w-3xl w-full max-h-[88vh] overflow-y-auto relative"
+          role="dialog"
+          aria-modal="true"
+          :aria-labelledby="`modal-title-${current.key}`"
         >
           <button
+            ref="closeBtn"
             type="button"
-            class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-[#1C1917]/70 text-[#FAF8F5] flex items-center justify-center hover:bg-[#A8442A] transition"
-            :aria-label="$t('projects.visitCta')"
-            @click="close"
+            class="absolute top-0 right-0 z-10 w-12 h-12 bg-ink text-paper flex items-center justify-center hover:bg-accent transition-colors"
+            :aria-label="$t('const.close')"
+            @click="modalOpen = false"
           >
             ✕
           </button>
-          <div class="h-70 overflow-hidden bg-[#F3F0EA]">
+          <div class="aspect-video overflow-hidden border-b-2 border-ink hatch">
             <img
-              v-if="current"
-              :src="current.image"
-              :alt="current.title"
+              :src="current.image.src"
+              :width="current.image.width"
+              :height="current.image.height"
+              alt=""
               class="w-full h-full object-cover object-top"
+              loading="lazy"
             />
           </div>
           <div class="p-6 sm:p-10 flex flex-col gap-5">
-            <div class="flex gap-2 flex-wrap">
-              <span
-                v-for="tag in current?.tags"
-                :key="tag"
-                class="text-xs text-[#A8442A] border border-[#EBD5CC] rounded-full px-3 py-1"
-                >{{ tag }}</span
-              >
-            </div>
-            <h3 class="font-display text-3xl text-[#1C1917]">
-              {{ current?.title }}
+            <ul
+              class="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-ink/70"
+            >
+              <li v-for="tag in current.tags" :key="tag">{{ tag }}</li>
+            </ul>
+            <h3
+              :id="`modal-title-${current.key}`"
+              class="text-3xl font-extrabold tracking-[-0.03em] leading-tight"
+            >
+              {{ current.title }}
             </h3>
-            <p class="text-[#57534E] leading-relaxed text-lg">
-              {{ current?.description }}
+            <p class="text-ink/70 leading-relaxed text-lg">
+              {{ current.description }}
             </p>
-            <div class="flex flex-col gap-2">
-              <div
-                v-for="(pt, i) in current?.points"
+            <ul class="flex flex-col border-t border-ink/20">
+              <li
+                v-for="(pt, i) in current.points"
                 :key="i"
-                class="flex gap-3 items-baseline text-[#1C1917]"
+                class="flex gap-3 items-baseline border-b border-ink/20 py-2.5"
               >
-                <span class="text-[#A8442A] font-mono">-></span>
+                <span class="font-mono text-xs text-accent">{{
+                  String(i + 1).padStart(2, "0")
+                }}</span>
                 <span>{{ pt }}</span>
-              </div>
-            </div>
-            <div class="border-t border-[#E9E5DD] pt-4">
-              <strong class="text-[#A8442A]">{{ $t("projects.resultLabel") }} </strong>
-              {{ current?.result }}
-            </div>
+              </li>
+            </ul>
+            <p>
+              <strong class="text-accent"
+                >{{ $t("projects.resultLabel") }}
+              </strong>
+              {{ current.result }}
+            </p>
             <div class="flex gap-4 items-center flex-wrap">
               <a
-                :href="current?.site"
+                :href="current.site"
                 target="_blank"
                 rel="noopener"
-                class="inline-flex items-center gap-2 rounded-full bg-[#1C1917] text-[#FAF8F5] px-6 py-3 text-sm font-medium hover:bg-[#A8442A] transition"
-                >{{ $t("projects.visitCta") }} {{ current?.siteLabel }} -></a
+                class="btn btn-secondary"
+                >{{ $t("projects.visitCta") }} {{ current.siteLabel }} ↗</a
               >
               <a
                 href="#contact"
-                class="text-[#A8442A] font-semibold text-sm hover:underline"
-                @click="close"
+                class="inline-flex min-h-11 items-center font-bold text-accent hover:text-ink"
+                @click="modalOpen = false"
                 >{{ $t("projects.similarProjectCta") }}</a
               >
             </div>
@@ -168,27 +293,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from "vue";
-import opportaImg from "~/assets/projects/opporta.png";
-import ldaImg from "~/assets/projects/lda.png";
-import mobImg from "~/assets/projects/lamobapapa.png";
+import {
+  ref,
+  computed,
+  watch,
+  nextTick,
+  onMounted,
+  onBeforeUnmount,
+} from "vue";
+import { PROJECTS } from "~/data/projects";
 
 const { tm, t } = useI18n();
 const { toText, toTextArray } = useI18nText();
 
-const PROJECT_KEYS = ["opporta", "lda", "mob"] as const;
-const PROJECT_IMAGES: Record<(typeof PROJECT_KEYS)[number], string> = {
-  opporta: opportaImg,
-  lda: ldaImg,
-  mob: mobImg,
-};
+type MetricRaw = { value: any; label: any };
+type QuoteRaw = { text?: any; author?: any };
 
 const items = computed(() =>
-  PROJECT_KEYS.map((key) => {
-    const base = `projects.items.${key}`;
+  PROJECTS.map((p) => {
+    const base = `projects.items.${p.key}`;
+    const quoteRaw = (tm(`${base}.quote`) ?? {}) as QuoteRaw;
+    const quoteText = quoteRaw.text ? toText(quoteRaw.text) : "";
     return {
-      key,
-      image: PROJECT_IMAGES[key],
+      ...p,
       tags: toTextArray(tm(`${base}.tags`) as any[]),
       title: toText(t(`${base}.title`)),
       description: toText(t(`${base}.description`)),
@@ -196,8 +323,20 @@ const items = computed(() =>
       result: toText(t(`${base}.result`)),
       site: toText(t(`${base}.site`)),
       siteLabel: toText(t(`${base}.siteLabel`)),
+      // Optional data: blocks are hidden when empty (never show placeholders)
+      metrics: ((tm(`${base}.metrics`) as MetricRaw[]) ?? [])
+        .map((m) => ({ value: toText(m.value), label: toText(m.label) }))
+        .filter((m) => m.value)
+        .slice(0, 3),
+      quote: quoteText
+        ? {
+            text: quoteText,
+            author: quoteRaw.author ? toText(quoteRaw.author) : "",
+          }
+        : null,
+      code: Array.isArray(p.code) ? (p.code.length ? p.code : null) : null,
     };
-  })
+  }),
 );
 
 const sideProjects = computed(() => [
@@ -211,17 +350,56 @@ const sideProjects = computed(() => [
   },
 ]);
 
-const openKey = ref<string | null>(null);
-const current = computed(() => items.value.find((p) => p.key === openKey.value));
+/* ====
+ * Tabs
+ * ==== */
+const active = ref(0);
+const tabRefs = ref<HTMLButtonElement[]>([]);
+const current = computed(() => items.value[active.value]);
 
-function open(key: string) {
-  openKey.value = key;
+/* ==============
+ * Code excerpts
+ * ============== */
+const activeSnippet = ref(0);
+const snippet = computed(() => current.value?.code?.[activeSnippet.value]);
+
+// Back to the first excerpt when switching project
+watch(active, () => (activeSnippet.value = 0));
+
+function fileName(path: string) {
+  return path.split("/").pop() ?? path;
 }
-function close() {
-  openKey.value = null;
+
+// "45" → "PR #45"; a full PR title ("feat(x): … #45") is shown as is
+function prLabel(pr: string) {
+  return /^\d+$/.test(pr) ? `PR #${pr}` : pr;
 }
+
+function onTabKeydown(e: KeyboardEvent) {
+  const n = items.value.length;
+  let next: number | null = null;
+  if (e.key === "ArrowRight") next = (active.value + 1) % n;
+  else if (e.key === "ArrowLeft") next = (active.value - 1 + n) % n;
+  else if (e.key === "Home") next = 0;
+  else if (e.key === "End") next = n - 1;
+  if (next === null) return;
+  e.preventDefault();
+  active.value = next;
+  tabRefs.value[next]?.focus();
+}
+
+/* =====
+ * Modal
+ * ===== */
+const modalOpen = ref(false);
+const closeBtn = ref<HTMLButtonElement | null>(null);
+
+watch(modalOpen, (isOpen) => {
+  if (isOpen) nextTick(() => closeBtn.value?.focus());
+});
+
 function onKeydown(e: KeyboardEvent) {
-  if (e.key === "Escape") close();
+  if (e.key === "Escape") modalOpen.value = false;
 }
 onMounted(() => window.addEventListener("keydown", onKeydown));
 onBeforeUnmount(() => window.removeEventListener("keydown", onKeydown));
