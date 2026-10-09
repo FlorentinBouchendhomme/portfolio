@@ -1,63 +1,40 @@
 <template>
-  <section
-    class="bg-[#FAF8F5] border-t border-[#E9E5DD]"
-    aria-labelledby="offers-title"
-  >
-    <div v-reveal class="mx-auto max-w-6xl px-8 sm:px-16 py-16 sm:py-22">
-      <div
-        class="text-xs font-semibold uppercase tracking-widest text-[#A8442A] mb-3"
-      >
-        {{ $t("const.offers") }}
-      </div>
-      <h2
-        id="offers-title"
-        class="font-display font-normal text-[#1C1917] mb-3"
-        style="font-size: clamp(2rem, 3.5vw, 2.6rem)"
-      >
-        {{ $t("offers.title") }}
-      </h2>
-      <p class="text-lg text-[#57534E] max-w-xl mb-11">
-        {{ $t("offers.subtitle") }}
-      </p>
-
-      <div
-        class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
-        role="list"
-        aria-label="Offers"
-      >
-        <CardsOfferCard
-          role="listitem"
-          :title="$t('offers.retainer10.name')"
-          :subtitle="$t('offers.retainer10.for')"
-          :price="$t('offers.retainer10.price')"
-          :sub-price="$t('offers.retainer10.subPrice')"
-        />
-
-        <CardsOfferCard
-          role="listitem"
-          highlighted
-          :title="$t('offers.retainer20.name')"
-          :subtitle="$t('offers.retainer20.for')"
-          :price="$t('offers.retainer20.price')"
-          :sub-price="$t('offers.retainer20.subPrice')"
-        />
-
-        <CardsOfferCard
-          role="listitem"
-          :title="$t('offers.sprint.name')"
-          :subtitle="$t('offers.sprint.for')"
-          :price="$t('offers.sprint.price')"
-        />
-
-        <CardsOfferCard
-          role="listitem"
-          :title="$t('offers.fromScratch.name')"
-          :subtitle="$t('offers.fromScratch.for')"
-          :price="$t('offers.fromScratch.price')"
-        />
+  <section class="wrap pt-10 pb-20 lg:pb-28" aria-labelledby="offers-title">
+    <div v-reveal>
+      <div class="grid-swiss gap-y-5 items-end mb-10 lg:mb-14">
+        <div class="sm:col-span-6 lg:col-span-7">
+          <div class="eyebrow text-ink/55 mb-4">
+            01 / {{ $t("const.offers") }}
+          </div>
+          <h2 id="offers-title" class="display-2">{{ $t("offers.title") }}</h2>
+        </div>
+        <p
+          class="sm:col-span-6 lg:col-start-9 lg:col-span-4 text-ink/70 leading-relaxed"
+        >
+          {{ $t("offers.subtitle") }}
+        </p>
       </div>
 
-      <p class="mt-8 text-sm text-[#78716C]">
+      <ul
+        class="grid gap-0.5 bg-ink border-2 border-ink sm:grid-cols-2 lg:grid-cols-4"
+        :aria-label="$t('const.offers')"
+      >
+        <li v-for="(key, i) in OFFER_KEYS" :key="key" class="flex">
+          <CardsOfferCard
+            :index="i + 1"
+            :offer-key="key"
+            :highlighted="key === 'retainer20'"
+            :title="$t(`offers.${key}.name`)"
+            :subtitle="$t(`offers.${key}.for`)"
+            :price="$t(`offers.${key}.price`)"
+            :sub-price="
+              te(`offers.${key}.subPrice`) ? $t(`offers.${key}.subPrice`) : ''
+            "
+          />
+        </li>
+      </ul>
+
+      <p class="mt-5 text-xs leading-relaxed text-ink/55">
         <span v-for="(c, i) in conditionsText" :key="i"
           >{{ c
           }}<template v-if="i < conditionsText.length - 1"> / </template></span
@@ -69,8 +46,9 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { OFFER_KEYS } from "~/composables/useSiteConfig";
 
-const { tm } = useI18n();
+const { tm, te } = useI18n();
 const { toTextArray } = useI18nText();
 
 const conditionsText = computed(() =>
