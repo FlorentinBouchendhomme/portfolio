@@ -9,10 +9,14 @@
     "articles": "Articles",
     "contact": "Contact",
     "cta": "Discutons",
-    "menu": "Menu"
+    "menu": "Menu",
+    "backToTop": "Retour en haut",
+    "mainNav": "Navigation principale",
+    "close": "Fermer"
   },
   "hero": {
     "badge": "Disponible - Remote, soir et week-end",
+    "role": "Développeur fullstack freelance",
     "title": "Le renfort fullstack que vos équipes méritent.",
     "subtitle": "Développeur fullstack disponible en freelance et spécialisé en Symfony, Nuxt et Vue. J'intègre vos projets existants ou je construis de zéro - PR propres, communication claire et livraisons régulières.",
     "primaryCta": "Discutons de votre projet",
@@ -39,7 +43,8 @@
     "write": "Tapez",
     "toStart": "pour commencer",
     "stop": "clear pour arrêter",
-    "unknownCommand": "Commande inconnue"
+    "unknownCommand": "Commande inconnue",
+    "close": "Fermer le terminal"
   },
   "about": {
     "heading": "La personne derrière le code.",
@@ -50,9 +55,40 @@
     "locationTag": "Calvados (14) / Normandie",
     "statusTag": "Fullstack en poste, entreprise de recrutement",
     "stats": [
-      { "value": "6 ans", "label": "d'expérience professionnelle" },
-      { "value": "3", "label": "projets pro livrés" },
-      { "value": "3", "label": "projets perso terminés" }
+      {
+        "value": "6 ans",
+        "label": "d'expérience professionnelle"
+      },
+      {
+        "value": "3",
+        "label": "projets pro livrés"
+      },
+      {
+        "value": "3",
+        "label": "projets perso terminés"
+      }
+    ],
+    "timeline": [
+      {
+        "year": "2013",
+        "title": "Premières lignes de code",
+        "subtitle": "Jeux, domotique, applications web - par passion"
+      },
+      {
+        "year": "2023",
+        "title": "Master gestion de projet",
+        "subtitle": "Double master, Bac+5"
+      },
+      {
+        "year": "2023",
+        "title": "Master développement fullstack",
+        "subtitle": "Double master, Bac+5"
+      },
+      {
+        "year": "Aujourd'hui",
+        "title": "Fullstack en poste + freelance",
+        "subtitle": "Entreprise de recrutement / soirs et week-ends"
+      }
     ]
   },
   "offers": {
@@ -86,7 +122,8 @@
       "Les tarifs affichés n'incluent pas les coûts tiers (hébergement, licences, etc.).",
       "Urgence possible, sous réserve d'ajustement des tarifs.",
       "Toute demande supplémentaire fera l'objet d'un nouveau devis."
-    ]
+    ],
+    "chooseCta": "Choisir ce format →"
   },
   "projects": {
     "title": "Des projets concrets, en production.",
@@ -96,7 +133,12 @@
     "similarProjectCta": "Un projet similaire ? Parlons-en !",
     "items": {
       "opporta": {
-        "tags": ["Symfony", "Vue-Vuex-Nuxt", "MySQL", "Redis"],
+        "tags": [
+          "Symfony",
+          "Vue-Vuex-Nuxt",
+          "MySQL",
+          "Redis"
+        ],
         "title": "Opporta - plateforme emploi des GEIQ",
         "description": "Rapprocher candidats et entreprises adhérentes des GEIQ : la plateforme centralise offres d'emploi, évènements de recrutement et formations qualifiantes. Identité visuelle conçue en binôme avec une graphiste externe.",
         "points": [
@@ -107,10 +149,38 @@
         ],
         "result": "plateforme en production, contenus publiés en continu par les équipes.",
         "site": "https://opporta.fr",
-        "siteLabel": "opporta"
+        "siteLabel": "opporta",
+        "metrics": [
+          [
+            {
+              "value": "2",
+              "label": "ans en production"
+            }
+          ],
+          [
+            {
+              "value": "+100",
+              "label": "offres d'emploi publiées"
+            }
+          ],
+          [
+            {
+              "value": "+6000",
+              "label": "candidats inscrits"
+            }
+          ]
+        ],
+        "quote": {
+          "text": "Opporta a été un bon pour le recrutement de notre GEIQ. La plateforme a simplifié notre processus de recrutement et a considérablement augmenté l'engagement des candidats.",
+          "author": "Marie L., directrice des GEIQ PEP'S"
+        }
       },
       "lda": {
-        "tags": ["WordPress", "Thème sur-mesure", "SEO"],
+        "tags": [
+          "WordPress",
+          "Thème sur-mesure",
+          "SEO"
+        ],
         "title": "L'Agence d'Architecture - vitrine LDA / LDI",
         "description": "Site daté, peu lisible sur mobile et invisible sur Google. Refonte complète en binôme avec une graphiste externe.",
         "points": [
@@ -121,10 +191,18 @@
         ],
         "result": "site moderne, rapide, bien référencé - livré dans les délais convenus.",
         "site": "https://lagencedarchitecture.com",
-        "siteLabel": "lagencedarchitecture"
+        "siteLabel": "lagencedarchitecture",
+        "metrics": [],
+        "quote": {}
       },
       "mob": {
-        "tags": ["Nuxt", "Symfony", "MySQL", "Réservation", "OpenStreetMap"],
+        "tags": [
+          "Nuxt",
+          "Symfony",
+          "MySQL",
+          "Réservation",
+          "OpenStreetMap"
+        ],
         "title": "La Mob à Papa - mobylothérapie en Artois",
         "description": "Location de mobylettes anciennes, tandems et vélos d'époque pour sillonner l'Artois - un site chaleureux fidèle à l'esprit du garage.",
         "points": [
@@ -136,7 +214,25 @@
         ],
         "result": "en ligne, réservation directe des balades.",
         "site": "https://lamobapapa.fr",
-        "siteLabel": "lamobapapa"
+        "siteLabel": "lamobapapa",
+        "metrics": [
+          [
+            {
+              "value": "1",
+              "label": "an en production"
+            }
+          ],
+          [
+            {
+              "value": "+200",
+              "label": "balades réservées en ligne"
+            }
+          ]
+        ],
+        "quote": {
+          "text": "Le travail de Florentin sur notre site était exceptionnel. Le système de réservation est transparent, et le design capture parfaitement l'esprit de nos mobylettes vintage.",
+          "author": "Cedric L., gérant de 'La Mob à Papa'"
+        }
       }
     },
     "side": {
@@ -150,12 +246,17 @@
         "title": "Jeu de société porté en ligne",
         "description": "Portage d'un jeu de plateau en version web multijoueur - règles, parties en ligne, temps réel."
       }
-    }
+    },
+    "tabsLabel": "Projets",
+    "mergedLabel": "mergée",
+    "codeLabel": "Extraits de code"
   },
   "testimonials": {
     "title": "Ils ont travaillé avec moi.",
-    "items": ["témoignage client à insérer", "témoignage client à insérer"],
-    "attribution": "Nom, rôle, société"
+    "quote": {},
+    "askTitle": "Vous avez travaillé avec moi ?",
+    "askCta": "Laisser un témoignage →",
+    "mailSubject": "Témoignage"
   },
   "faq": {
     "title": "Les questions qu'on me pose.",
@@ -237,13 +338,16 @@
     "mailHint": "Le bouton ouvre votre client mail avec le message pré-rempli.",
     "formTitle": "Parlez-moi de votre projet",
     "copyMe": "Copier le template",
-    "copied": "Copié !"
+    "copied": "Copié !",
+    "formatLabel": "Format",
+    "sendWithFormat": "Envoyer - format : {format} →",
+    "formatLine": "Format souhaité : {format}"
   },
   "footer": {
     "rights": "Tous droits réservés."
   },
   "mail": {
     "subject": "Demande de projet",
-    "body": "Bonjour Florentin,\n\nNous aurions besoin d'un coup de main avec :\n- Contexte : \n- Language(s) utilisé(s) : \n- Priorité (bugs / performance / nouveauté / de zéro) : \n- Format souhaité (10h / 20h / sprint / MVP) : \n\nCordialement,\n"
+    "body": "Bonjour Florentin,\n\nNous aurions besoin d'un coup de main avec :\n- Contexte : \n- Language(s) utilisé(s) : \n- Priorité (bugs / performance / nouveauté / de zéro) : \n- Format souhaité (10h / 20h / sprint / MVP) : {format}\n\nCordialement,\n"
   }
 }

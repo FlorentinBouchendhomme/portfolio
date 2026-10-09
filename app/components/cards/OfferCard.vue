@@ -1,72 +1,76 @@
 <template>
   <article
-    class="border p-7 flex flex-col gap-3 transition duration-200 hover:-translate-y-1"
-    :class="
-      highlighted
-        ? 'border-[#1C1917] bg-[#1C1917] text-[#FAF8F5] hover:shadow-[0_16px_40px_rgba(168,68,42,0.35)] hover:border-[#A8442A]'
-        : 'border-[#E2DED6] bg-white hover:shadow-[0_16px_40px_rgba(28,25,23,0.08)] hover:border-[#C9C2B4]'
-    "
+    class="flex-1 flex flex-col gap-4 p-6 lg:p-7"
+    :class="highlighted ? 'bg-accent text-white' : 'bg-paper text-ink'"
     :aria-labelledby="titleId"
-    :aria-describedby="subtitleId"
   >
-    <div class="flex items-center justify-between gap-2 flex-wrap">
-      <h3
-        :id="titleId"
-        class="text-lg font-semibold"
-        :class="highlighted ? 'text-[#FAF8F5]' : 'text-[#1C1917]'"
-      >
-        {{ titleText }}
-      </h3>
+    <div class="flex items-center justify-between gap-2 font-mono text-[13px]">
+      <span :class="highlighted ? 'text-white' : 'text-ink/55'">{{
+        String(index).padStart(2, "0")
+      }}</span>
       <span
         v-if="highlighted"
-        class="text-xs bg-[#A8442A] text-[#FAF8F5] rounded-full px-2.5 py-0.5"
+        class="border border-white px-2 py-0.5 text-xs uppercase tracking-wide"
         >{{ $t("offers.popularLabel") }}</span
       >
     </div>
 
-    <p
-      :id="subtitleId"
-      class="text-sm leading-relaxed flex-1"
-      :class="highlighted ? 'text-[#C7C2B8]' : 'text-[#57534E]'"
+    <h3
+      :id="titleId"
+      class="text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.02em]"
     >
-      {{ subtitleText }}
+      {{ title }}
+    </h3>
+
+    <p
+      class="text-[15px] leading-relaxed flex-1"
+      :class="highlighted ? 'text-white/90' : 'text-ink/70'"
+    >
+      {{ subtitle }}
     </p>
 
     <div
-      class="font-display text-2xl"
-      :class="highlighted ? 'text-[#FAF8F5]' : 'text-[#1C1917]'"
+      class="border-t pt-4"
+      :class="highlighted ? 'border-white/40' : 'border-ink/20'"
     >
-      {{ priceText }}
-      <span class="text-lg" :class="highlighted ? 'text-[#C7C2B8]' : 'text-[#57534E]'">
-        {{ subPriceText }}
-      </span>
+      <div class="text-[22px] font-extrabold tracking-[-0.02em]">
+        {{ price }}
+        <span
+          v-if="subPrice"
+          class="text-base font-medium"
+          :class="highlighted ? 'text-white/90' : 'text-ink/70'"
+          >{{ subPrice }}</span
+        >
+      </div>
     </div>
+
+    <a
+      href="#contact"
+      class="inline-flex min-h-11 items-center font-bold transition-colors"
+      :class="
+        highlighted ? 'text-white hover:text-ink' : 'text-accent hover:text-ink'
+      "
+      @click="contactFormat = offerKey"
+    >
+      {{ $t("offers.chooseCta") }}
+      <span class="sr-only"> - {{ title }}</span>
+    </a>
   </article>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { useContactFormat, type OfferKey } from "~/composables/useSiteConfig";
 
-type Props = {
-  title: any;
-  subtitle: any;
-  price: any;
-  subPrice?: any;
+defineProps<{
+  index: number;
+  offerKey: OfferKey;
+  title: string;
+  subtitle: string;
+  price: string;
+  subPrice?: string;
   highlighted?: boolean;
-};
+}>();
 
-const props = withDefaults(defineProps<Props>(), {
-  highlighted: false,
-});
-
-const { toText } = useI18nText();
-
-const uid = useId();
-const titleId = `offer-title-${uid}`;
-const subtitleId = `offer-subtitle-${uid}`;
-
-const titleText = computed(() => toText(props.title));
-const subtitleText = computed(() => toText(props.subtitle));
-const priceText = computed(() => toText(props.price));
-const subPriceText = computed(() => toText(props.subPrice));
+const contactFormat = useContactFormat();
+const titleId = `offer-title-${useId()}`;
 </script>
