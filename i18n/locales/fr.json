@@ -133,12 +133,7 @@
     "similarProjectCta": "Un projet similaire ? Parlons-en !",
     "items": {
       "opporta": {
-        "tags": [
-          "Symfony",
-          "Vue-Vuex-Nuxt",
-          "MySQL",
-          "Redis"
-        ],
+        "tags": ["Symfony", "Vue-Vuex-Nuxt", "MySQL", "Redis"],
         "title": "Opporta - plateforme emploi des GEIQ",
         "description": "Rapprocher candidats et entreprises adhérentes des GEIQ : la plateforme centralise offres d'emploi, évènements de recrutement et formations qualifiantes. Identité visuelle conçue en binôme avec une graphiste externe.",
         "points": [
@@ -163,14 +158,10 @@
             "value": "+6000",
             "label": "candidats inscrits"
           }
-        ],
+        ]
       },
       "lda": {
-        "tags": [
-          "WordPress",
-          "Thème sur-mesure",
-          "SEO"
-        ],
+        "tags": ["WordPress", "Thème sur-mesure", "SEO"],
         "title": "L'Agence d'Architecture - vitrine LDA / LDI",
         "description": "Site daté, peu lisible sur mobile et invisible sur Google. Refonte complète en binôme avec une graphiste externe.",
         "points": [
@@ -186,13 +177,7 @@
         "quote": {}
       },
       "mob": {
-        "tags": [
-          "Nuxt",
-          "Symfony",
-          "MySQL",
-          "Réservation",
-          "OpenStreetMap"
-        ],
+        "tags": ["Nuxt", "Symfony", "MySQL", "Réservation", "OpenStreetMap"],
         "title": "La Mob à Papa - mobylothérapie en Artois",
         "description": "Location de mobylettes anciennes, tandems et vélos d'époque pour sillonner l'Artois - un site chaleureux fidèle à l'esprit du garage.",
         "points": [
@@ -214,7 +199,7 @@
             "value": "+200",
             "label": "balades réservées en ligne"
           }
-        ],
+        ]
       }
     },
     "side": {

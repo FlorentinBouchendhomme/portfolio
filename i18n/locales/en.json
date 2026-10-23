@@ -133,12 +133,7 @@
     "similarProjectCta": "A similar project in mind? Let's talk!",
     "items": {
       "opporta": {
-        "tags": [
-          "Symfony",
-          "Vue-Vuex-Nuxt",
-          "MySQL",
-          "Redis"
-        ],
+        "tags": ["Symfony", "Vue-Vuex-Nuxt", "MySQL", "Redis"],
         "title": "Opporta - job platform for French GEIQ consortiums",
         "description": "Connecting candidates with member companies of French employment-training consortiums (GEIQ): the platform centralizes job listings, recruitment events, and qualifying training programs. Visual identity designed alongside a freelance graphic designer.",
         "points": [
@@ -163,14 +158,10 @@
             "value": "+6000",
             "label": "candidates registered"
           }
-        ],
+        ]
       },
       "lda": {
-        "tags": [
-          "WordPress",
-          "Custom theme",
-          "SEO"
-        ],
+        "tags": ["WordPress", "Custom theme", "SEO"],
         "title": "L'Agence d'Architecture - LDA / LDI showcase site",
         "description": "Outdated site, hard to read on mobile, invisible on Google. Full redesign alongside a freelance graphic designer.",
         "points": [
@@ -186,13 +177,7 @@
         "quote": {}
       },
       "mob": {
-        "tags": [
-          "Nuxt",
-          "Symfony",
-          "MySQL",
-          "Booking",
-          "OpenStreetMap"
-        ],
+        "tags": ["Nuxt", "Symfony", "MySQL", "Booking", "OpenStreetMap"],
         "title": "La Mob à Papa - vintage moped therapy in Artois",
         "description": "Rental of vintage mopeds, tandems, and period bikes to explore the Artois countryside - a warm site true to the garage's spirit.",
         "points": [
@@ -214,7 +199,7 @@
             "value": "+200",
             "label": "rides booked online"
           }
-        ],
+        ]
       }
     },
     "side": {
