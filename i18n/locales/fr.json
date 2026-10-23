@@ -56,7 +56,7 @@
     "statusTag": "Fullstack en poste, entreprise de recrutement",
     "stats": [
       {
-        "value": "6 ans",
+        "value": "5 ans",
         "label": "d'expérience professionnelle"
       },
       {
@@ -151,29 +151,19 @@
         "site": "https://opporta.fr",
         "siteLabel": "opporta",
         "metrics": [
-          [
-            {
-              "value": "2",
-              "label": "ans en production"
-            }
-          ],
-          [
-            {
-              "value": "+100",
-              "label": "offres d'emploi publiées"
-            }
-          ],
-          [
-            {
-              "value": "+6000",
-              "label": "candidats inscrits"
-            }
-          ]
+          {
+            "value": "2",
+            "label": "ans en production"
+          },
+          {
+            "value": "+100",
+            "label": "offres d'emploi publiées"
+          },
+          {
+            "value": "+6000",
+            "label": "candidats inscrits"
+          }
         ],
-        "quote": {
-          "text": "Opporta a été un bon pour le recrutement de notre GEIQ. La plateforme a simplifié notre processus de recrutement et a considérablement augmenté l'engagement des candidats.",
-          "author": "Marie L., directrice des GEIQ PEP'S"
-        }
       },
       "lda": {
         "tags": [
@@ -216,23 +206,15 @@
         "site": "https://lamobapapa.fr",
         "siteLabel": "lamobapapa",
         "metrics": [
-          [
-            {
-              "value": "1",
-              "label": "an en production"
-            }
-          ],
-          [
-            {
-              "value": "+200",
-              "label": "balades réservées en ligne"
-            }
-          ]
+          {
+            "value": "1",
+            "label": "an en production"
+          },
+          {
+            "value": "+200",
+            "label": "balades réservées en ligne"
+          }
         ],
-        "quote": {
-          "text": "Le travail de Florentin sur notre site était exceptionnel. Le système de réservation est transparent, et le design capture parfaitement l'esprit de nos mobylettes vintage.",
-          "author": "Cedric L., gérant de 'La Mob à Papa'"
-        }
       }
     },
     "side": {
