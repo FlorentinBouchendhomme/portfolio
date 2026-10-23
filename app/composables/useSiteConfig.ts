@@ -1,5 +1,5 @@
 export const SITE_EMAIL = "contact@florentinbouchendhomme.dev";
-export const SITE_PHONE = "+33 7 82 67 69 62";
+export const SITE_PHONE = "+33 7 82 67 59 62";
 export const SITE_LINKEDIN = "https://www.linkedin.com/in/florentinb";
 
 // Articles section (and its nav link) stays hidden while articles are "coming soon".
