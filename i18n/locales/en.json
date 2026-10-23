@@ -56,7 +56,7 @@
     "statusTag": "Full-stack employee, recruitment company",
     "stats": [
       {
-        "value": "6 yrs",
+        "value": "5 yrs",
         "label": "of professional experience"
       },
       {
@@ -151,29 +151,19 @@
         "site": "https://opporta.fr",
         "siteLabel": "opporta",
         "metrics": [
-          [
-            {
-              "value": "2",
-              "label": "years in production"
-            }
-          ],
-          [
-            {
-              "value": "+100",
-              "label": "job listings published"
-            }
-          ],
-          [
-            {
-              "value": "+6000",
-              "label": "candidates registered"
-            }
-          ]
+          {
+            "value": "2",
+            "label": "years in production"
+          },
+          {
+            "value": "+100",
+            "label": "job listings published"
+          },
+          {
+            "value": "+6000",
+            "label": "candidates registered"
+          }
         ],
-        "quote": {
-          "text": "Opporta has been a game-changer for our GEIQ consortiums. The platform has streamlined our recruitment process and significantly increased candidate engagement.",
-          "author": "Marie L., director of GEIQ PEP'S"
-        }
       },
       "lda": {
         "tags": [
@@ -216,23 +206,15 @@
         "site": "https://lamobapapa.fr",
         "siteLabel": "lamobapapa",
         "metrics": [
-          [
-            {
-              "value": "1",
-              "label": "year in production"
-            }
-          ],
-          [
-            {
-              "value": "+200",
-              "label": "rides booked online"
-            }
-          ]
+          {
+            "value": "1",
+            "label": "year in production"
+          },
+          {
+            "value": "+200",
+            "label": "rides booked online"
+          }
         ],
-        "quote": {
-          "text": "Florentin's work on our website was exceptional. The booking system is seamless, and the design perfectly captures the spirit of our vintage mopeds.",
-          "author": "Cedric L., owner of 'La Mob à Papa'"
-        }
       }
     },
     "side": {
